@@ -21,13 +21,17 @@ public class Lever : MonoBehaviour, IInteractable
         {
             //press f UI ý belirecek
             isActive = !isActive;
-            if (isActive)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                Activate();
-            } else
-            {
-                Deactivate();
-            }          
+                if (isActive)
+                {
+                    Activate();
+                }
+                else
+                {
+                    Deactivate();
+                }
+            }                
         }
     }
     public void Activate()
