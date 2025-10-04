@@ -11,7 +11,6 @@ public class RetrySystem : MonoBehaviour
     {
         spawnPoint = new Vector3[levelCount];
     }
-
     void Update()
     {
        if (Input.GetKeyDown(KeyCode.R))
