@@ -6,27 +6,39 @@ public class Gate : MonoBehaviour, IInteractable
 {
     public Vector3 xOffSet = new Vector3(3, 0, 0);
     public Vector3 yOffSet = new Vector3(0, 3, 0);
+    public bool isMoved = false;
 
     public void Activate()
     {
+ 
         //play gate open animation
-        if (transform.rotation.z == 90)
+        if (isMoved != true)
         {
-            transform.position += yOffSet;
-        } else
-        {
-            transform.position -= xOffSet;
-        }
+            if (Mathf.Approximately(transform.eulerAngles.z, 90f))
+            {
+                transform.position += yOffSet;
+            }
+            else
+            {
+                transform.position += xOffSet;
+            }
+        }   
+        isMoved = true;
     }
     public void Deactivate()
     {
         //play gate close animation
-        if (transform.rotation.z == 90)
+        if (isMoved == true)
         {
-            transform.position = -yOffSet;
-        } else
-        {
-            transform.position -= xOffSet;
-        }
+            if (Mathf.Approximately(transform.eulerAngles.z, 90f))
+            {
+                transform.position -= yOffSet;
+            }
+            else
+            {
+                transform.position -= xOffSet;
+            }
+        }      
+        isMoved = false;
     }
 }

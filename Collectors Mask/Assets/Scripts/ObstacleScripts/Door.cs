@@ -9,12 +9,11 @@ public class Door : MonoBehaviour, IInteractable
     public int areaCount;
     public bool isActive;
     public float interactRange = 1.5f;
-    private PlayerMovement player;
+    public PlayerMovement player;
     private void Start()
     {
         nextAreaSpawnPos = new Vector3[areaCount];
         isActive = false;
-        player = GetComponent<PlayerMovement>();
     }
     private void Update()
     {

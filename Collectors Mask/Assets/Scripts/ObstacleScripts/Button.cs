@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour, IInteractable
+public class Button : MonoBehaviour, IInteractable
 {
     public Gate targetGate;
     public bool isLightOn;
@@ -16,21 +16,14 @@ public class Lever : MonoBehaviour, IInteractable
     }
     private void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
+        if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn && !isActive)
         {
-            
+
             if (Input.GetKeyDown(KeyCode.F))
             {
-                isActive = !isActive;
-                if (isActive)
-                {
-                    Activate();
-                }
-                else
-                {
-                    Deactivate();
-                }
-            }                
+                isActive = true;
+                StartCoroutine("ButtonCoroutine");
+            }
         }
     }
     public void Activate()
@@ -40,7 +33,7 @@ public class Lever : MonoBehaviour, IInteractable
         {
             targetGate.Activate();
         }
-        Debug.Log("lever turned on");
+        Debug.Log("button turned on");
     }
     public void Deactivate()
     {
@@ -49,6 +42,13 @@ public class Lever : MonoBehaviour, IInteractable
         {
             targetGate.Deactivate();
         }
-        Debug.Log("lever turned off");
+        Debug.Log("button turned off");
+    }
+    public IEnumerator ButtonCoroutine()
+    {
+        Activate();
+        yield return new WaitForSeconds(3);
+        isActive = false;
+        Deactivate();
     }
 }
