@@ -12,7 +12,6 @@ public class MaskChanger : MonoBehaviour
     {
         timeMask = GetComponent<TimeMask>();
         cloneMask = GetComponent<CloneMask>();
-        cloneMask.isCloneMaskActive = true;
         //mirrorMask = GetComponent<MirrorMask>();
     }
     void Update()

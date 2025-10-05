@@ -10,10 +10,12 @@ public class RetrySystem : MonoBehaviour
     void Awake()
     {
         spawnPoint = new Vector3[levelCount];
-        spawnPoint[0] = new Vector3(-9.51f, -0.5f, 0);
+        //clone levels
+        spawnPoint[0] = new Vector3(-10.51f, -0.5f, 0);
         spawnPoint[1] = new Vector3(-26.51f, -0.5f, 0);
         spawnPoint[2] = new Vector3(-41.51f, 4.5f, 0);
-        spawnPoint[3] = new Vector3(-26.51f, -0.5f, 0);
+        spawnPoint[3] = new Vector3(-66.51f, 4.5f, 0);
+        //mirror levels
         spawnPoint[4] = new Vector3(-26.51f, -0.5f, 0);
         spawnPoint[5] = new Vector3(-26.51f, -0.5f, 0);
         spawnPoint[6] = new Vector3(-26.51f, -0.5f, 0);

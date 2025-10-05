@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2794328986489139162}
   - component: {fileID: -4737061107660447414}
   - component: {fileID: 4613014125488116818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Clone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

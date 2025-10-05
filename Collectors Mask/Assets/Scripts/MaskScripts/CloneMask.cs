@@ -6,11 +6,11 @@ public class CloneMask : MonoBehaviour
 {
     public GameObject clonePrefab;
     public GameObject[] cloneArr;
-    public bool isCloneMaskObtained = true;
+    public bool isCloneMaskObtained;
     public bool isCloneMaskActive;
     private void Awake()
     {
-        isCloneMaskObtained = true;
+        isCloneMaskObtained = false;
         cloneArr = new GameObject[1];
     }
     private void Update()

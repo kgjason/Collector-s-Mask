@@ -13,7 +13,7 @@ public class TimeMask : MonoBehaviour
 
     void Awake()
     {
-        isTimeMaskObtained = true;
+        isTimeMaskObtained = false;
         MonoBehaviour[] allObjects = FindObjectsOfType<MonoBehaviour>();
         foreach (var obj in allObjects)
         {
