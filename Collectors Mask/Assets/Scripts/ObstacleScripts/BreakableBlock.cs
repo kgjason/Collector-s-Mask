@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BreakableBlock : MonoBehaviour
@@ -7,18 +6,11 @@ public class BreakableBlock : MonoBehaviour
     public float breakDelay = 0.5f;
     private bool isBreaking = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            foreach (ContactPoint2D contact in collision.contacts)
-            {
-                if (contact.normal.y < -0.5f)
-                {
-                    StartCoroutine(BreakBlock());
-                    break;
-                }
-            }
+            StartCoroutine(BreakBlock());
         }
     }
 
@@ -26,9 +18,13 @@ public class BreakableBlock : MonoBehaviour
     {
         if (isBreaking) yield break;
         isBreaking = true;
+
+        // Görsel feedback
         GetComponent<SpriteRenderer>().color = Color.red;
+
         yield return new WaitForSeconds(breakDelay);
 
+        // Bloku kaldýr
         gameObject.SetActive(false);
     }
 }
