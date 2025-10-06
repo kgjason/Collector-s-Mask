@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class MaskChanger : MonoBehaviour
 {
-    public GameObject[] maskWheel = new GameObject[3];
+    public GameObject[] maskWheel = new GameObject[3]; // UI pozisyonlarý
     public int currentCloneIndex = 0;
     public int currentTimeIndex = 1;
     public int currentMirrorIndex = 2;
-    public int currentIndex = 0;
+
     public Sprite emptyMaskSprite;
     public Sprite cloneMaskSprite;
     public Sprite timeMaskSprite;
     public Sprite mirrorMaskSprite;
+
     public TimeMask timeMask;
     public CloneMask cloneMask;
     public MirrorCloneMask mirrorMask;
@@ -22,6 +23,8 @@ public class MaskChanger : MonoBehaviour
         timeMask = GetComponent<TimeMask>();
         cloneMask = GetComponent<CloneMask>();
         // mirrorMask = GetComponent<MirrorMask>();
+        UpdateUI();
+        UpdateActiveMask();
     }
 
     private void Update()
@@ -30,82 +33,60 @@ public class MaskChanger : MonoBehaviour
         {
             TurnUILeft();
             UpdateUI();
-            currentIndex--;
-            if (currentIndex < 0)
-            {
-                currentIndex += 3;
-            }
-            ChangeMask(currentIndex);
+            UpdateActiveMask();
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             TurnUIRight();
             UpdateUI();
-            currentIndex++;
-            currentIndex = currentIndex % 3;
-            ChangeMask(currentIndex);
+            UpdateActiveMask();
         }
     }
 
-    public void ChangeMask(int index)
+    public void UpdateActiveMask()
     {
-        if (index == 0 && cloneMask.isCloneMaskObtained)
-        {
-            // mirror mask = false;
-            timeMask.isTimeMaskActive = false;
+        // Önce tüm maskeleri pasif yap
+        cloneMask.isCloneMaskActive = false;
+        timeMask.isTimeMaskActive = false;
+        mirrorMask.isMirrorMaskActive = false;
+
+        // UI'daki 1. pozisyondaki mask aktif olsun
+        if (currentCloneIndex == 1 && cloneMask.isCloneMaskObtained)
             cloneMask.isCloneMaskActive = true;
-        }
-        else if (index == 1 && timeMask.isTimeMaskObtained)
-        {
-            // mirror mask = false;
-            cloneMask.isCloneMaskActive = false;
+        else if (currentTimeIndex == 1 && timeMask.isTimeMaskObtained)
             timeMask.isTimeMaskActive = true;
-        }
-        else if (index == 2)
-        {
-            timeMask.isTimeMaskActive = false;
-            cloneMask.isCloneMaskActive = false;
-            // mirror mask = true;
-        }
+        else if (currentMirrorIndex == 1 && mirrorMask.isMirrorMaskObtained)
+            mirrorMask.isMirrorMaskActive = true;
     }
+
     public void UpdateUI()
     {
-        if (cloneMask.isCloneMaskObtained == false)
-        {
-            maskWheel[currentCloneIndex].GetComponent<SpriteRenderer>().sprite = emptyMaskSprite;
-        } else
-        {
-            maskWheel[currentCloneIndex].GetComponent<SpriteRenderer>().sprite = cloneMaskSprite;
-        }
-        if (timeMask.isTimeMaskObtained == false)
-        {
-            maskWheel[currentTimeIndex].GetComponent<SpriteRenderer>().sprite = emptyMaskSprite;
-        }
-        else
-        {
-            maskWheel[currentTimeIndex].GetComponent<SpriteRenderer>().sprite = timeMaskSprite;
-        }
-        if (mirrorMask.isMirrorMaskObtained == false)
-        {
-            maskWheel[currentMirrorIndex].GetComponent<SpriteRenderer>().sprite = emptyMaskSprite;
-        }
-        else
-        {
-            maskWheel[currentMirrorIndex].GetComponent<SpriteRenderer>().sprite = mirrorMaskSprite;
-        }
+        // Clone mask
+        maskWheel[currentCloneIndex].GetComponent<SpriteRenderer>().sprite =
+            cloneMask.isCloneMaskObtained ? cloneMaskSprite : emptyMaskSprite;
+
+        // Time mask
+        maskWheel[currentTimeIndex].GetComponent<SpriteRenderer>().sprite =
+            timeMask.isTimeMaskObtained ? timeMaskSprite : emptyMaskSprite;
+
+        // Mirror mask
+        maskWheel[currentMirrorIndex].GetComponent<SpriteRenderer>().sprite =
+            mirrorMask.isMirrorMaskObtained ? mirrorMaskSprite : emptyMaskSprite;
     }
+
     public void TurnUIRight()
     {
-        int tempIndex = currentCloneIndex;
-        currentCloneIndex = currentTimeIndex;
-        currentTimeIndex = currentMirrorIndex;
-        currentMirrorIndex = tempIndex;
+        int temp = currentCloneIndex;
+        currentCloneIndex = currentMirrorIndex;
+        currentMirrorIndex = currentTimeIndex;
+        currentTimeIndex = temp;
     }
+
     public void TurnUILeft()
     {
-        int tempIndex = currentTimeIndex;
-        currentTimeIndex = currentCloneIndex;
-        currentCloneIndex = currentMirrorIndex;
-        currentMirrorIndex = tempIndex;        
+        int temp = currentCloneIndex;
+        currentCloneIndex = currentTimeIndex;
+        currentTimeIndex = currentMirrorIndex;
+        currentMirrorIndex = temp;
     }
 }
