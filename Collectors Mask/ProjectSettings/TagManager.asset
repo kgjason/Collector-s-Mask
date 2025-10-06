@@ -13,8 +13,8 @@ TagManager:
   - Water
   - UI
   - Clone
-  - 
-  - 
+  - Ground
+  - BreakableBlock
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Obstacle
     uniqueID: 3268290571
+    locked: 0
+  - name: Clone
+    uniqueID: 1185225057
     locked: 0
   - name: Player
     uniqueID: 1714942157

@@ -6,11 +6,14 @@ public class CollectMask : MonoBehaviour
 {
     public float interactRange = 1.5f;
     private int maskIndex;
+    public MaskChanger maskChanger;
     public PlayerMovement player;
     public CloneMask cloneMask;
     public TimeMask timeMask;
+
     [SerializeField] private GameObject cloneMaskSprite;
     [SerializeField] private GameObject timeMaskSprite;
+
     public Vector3 teleportPoint;
 
     void Awake()
@@ -30,6 +33,7 @@ public class CollectMask : MonoBehaviour
 
             foreach (Collider2D hit in hits)
             {
+                if (hit.CompareTag("Player")) continue; // oyuncuyu yok say
                 if (hit.CompareTag("Mask"))
                 {
                     MaskCollected(hit.gameObject);
@@ -44,6 +48,7 @@ public class CollectMask : MonoBehaviour
         if (maskIndex == 0)
         {
             cloneMask.isCloneMaskObtained = true;
+            cloneMask.isCloneMaskActive = true;
             Destroy(cloneMaskSprite);
         }
         else if (maskIndex == 1)
@@ -52,16 +57,16 @@ public class CollectMask : MonoBehaviour
             Destroy(timeMaskSprite);
             transform.position = teleportPoint;
         }
-
+        maskChanger.UpdateUI();
         maskIndex++;
-
-        Destroy(maskObject); // maskeyi ortadan kaldýrmak istersen
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         if (player != null)
+        {
             Gizmos.DrawWireSphere(player.transform.position, interactRange);
+        }
     }
 }

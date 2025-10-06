@@ -30,15 +30,19 @@ public class CloneMask : MonoBehaviour
         {
             Destroy(cloneArr[0]);
         }
-        cloneArr[0] = Instantiate(clonePrefab, transform.position, Quaternion.identity);
+        cloneArr[0] = Instantiate(clonePrefab, transform.position - new Vector3(0,1f,0), Quaternion.identity);
     }
     public void ChangePositions()
     {
         if (cloneArr[0] != null)
         {
-            Vector3 tempPos = cloneArr[0].transform.position;
-            cloneArr[0].transform.position = transform.position;
-            transform.position = tempPos;
-        }     
+            // Player ve clone pozisyonlarýný swap et, clone spawn offset'ini dikkate al
+            Vector3 clonePos = cloneArr[0].transform.position;
+            Vector3 playerPos = transform.position;
+
+            // Swap yaparken clone'un spawn offset'ini ekle
+            cloneArr[0].transform.position = playerPos - new Vector3(0, 1f, 0);
+            transform.position = clonePos + new Vector3(0, 1f, 0);
+        }
     }
 }

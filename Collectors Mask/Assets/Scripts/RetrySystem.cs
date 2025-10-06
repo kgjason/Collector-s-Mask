@@ -7,6 +7,21 @@ public class RetrySystem : MonoBehaviour
     public int puzzleIndex = 0;
     public Vector3[] spawnPoint;
     private int levelCount = 14;
+
+    [Header("Breakable Blocks")]
+    public BreakableBlock[] breakableBlocks;
+
+    [Header("Interactables")]
+    public Button[] buttons;
+    public Lever[] levers;
+
+    [Header("Time Mask")]
+    public TimeMask timeMask;
+
+    [Header("Mirror Objects")]
+    public Transform[] mirrorObjects;
+    private Vector3[] originalMirrorPositions;
+
     void Awake()
     {
         spawnPoint = new Vector3[levelCount];
@@ -27,18 +42,100 @@ public class RetrySystem : MonoBehaviour
         spawnPoint[12] = new Vector3(-26.51f, -0.5f, 0);
         spawnPoint[13] = new Vector3(-26.51f, -0.5f, 0);
 
+        // Mirror objelerin orijinal pozisyonlarýný kaydet
+        if (mirrorObjects != null && mirrorObjects.Length > 0)
+        {
+            originalMirrorPositions = new Vector3[mirrorObjects.Length];
+            for (int i = 0; i < mirrorObjects.Length; i++)
+                originalMirrorPositions[i] = mirrorObjects[i].position;
+        }
     }
+
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (spawnPoint[puzzleIndex] != null)
-            {
-                transform.position = spawnPoint[puzzleIndex];
-            }         
-        } 
+            RetryLevel();
+        }
     }
-    public void levelPassed()
+
+    public void RetryLevel()
+    {
+        // Oyuncuyu spawn noktasýna taþý
+        if (spawnPoint != null && spawnPoint.Length > puzzleIndex)
+            transform.position = spawnPoint[puzzleIndex];
+
+        ResetBreakableBlocks();
+        ResetInteractables();
+        ResetTimeMask();
+        ResetMirrorObjects();
+    }
+
+    private void ResetBreakableBlocks()
+    {
+        if (breakableBlocks == null) return;
+
+        foreach (var block in breakableBlocks)
+        {
+            // Eðer invisible klon varsa yok et
+            if (block.invisibleBlockClone != null)
+            {
+                Destroy(block.invisibleBlockClone);
+                block.invisibleBlockClone = null;
+            }
+
+            block.gameObject.SetActive(true);
+
+            // Sprite rengini resetle
+            var sr = block.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.color = Color.white;
+
+            block.isBreaking = false;
+        }
+    }
+
+    private void ResetInteractables()
+    {
+        if (buttons != null)
+        {
+            foreach (var btn in buttons)
+            {
+                btn.StopAllCoroutines();
+                btn.isActive = false;
+                btn.Deactivate();
+            }
+        }
+
+        if (levers != null)
+        {
+            foreach (var lever in levers)
+            {
+                lever.isActive = false;
+                lever.Deactivate();
+            }
+        }
+    }
+
+    private void ResetTimeMask()
+    {
+        if (timeMask != null && timeMask.isTimeStopped)
+        {
+            timeMask.UnfreezeWorld();
+        }
+    }
+
+    private void ResetMirrorObjects()
+    {
+        if (mirrorObjects == null || originalMirrorPositions == null) return;
+
+        for (int i = 0; i < mirrorObjects.Length; i++)
+        {
+            if (mirrorObjects[i] != null)
+                mirrorObjects[i].position = originalMirrorPositions[i];
+        }
+    }
+
+    public void LevelPassed()
     {
         puzzleIndex++;
     }

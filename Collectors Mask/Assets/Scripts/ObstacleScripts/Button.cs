@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Button : MonoBehaviour, IInteractable
@@ -9,46 +8,65 @@ public class Button : MonoBehaviour, IInteractable
     public bool isActive;
     public float interactRange = 1.5f;
     public PlayerMovement player;
-    private void Start()
-    {
-        isActive = false;
-        isLightOn = true;
-    }
+    public TimeMask timeMask; // scene'deki TimeMask referansý
+
+    private Coroutine buttonCoroutine;
+    private float remainingTime = 0f;
+
     private void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn && !isActive)
+        if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
         {
-
             if (Input.GetKeyDown(KeyCode.F))
             {
-                isActive = true;
-                StartCoroutine("ButtonCoroutine");
+                StartButton(3f);
             }
         }
     }
-    public void Activate()
+
+    public void StartButton(float duration)
     {
-        //play lever turn on animasyonu
-        if (targetGate != null)
+        if (buttonCoroutine != null)
         {
-            targetGate.Activate();
+            remainingTime += duration; // zaten aktifse süre ekle
         }
-        Debug.Log("button turned on");
-    }
-    public void Deactivate()
-    {
-        //play lever turn off animasyonu
-        if (targetGate != null)
+        else
         {
-            targetGate.Deactivate();
+            remainingTime = duration;
+            buttonCoroutine = StartCoroutine(ButtonCoroutine());
         }
-        Debug.Log("button turned off");
     }
-    public IEnumerator ButtonCoroutine()
+
+    private IEnumerator ButtonCoroutine()
     {
         Activate();
-        yield return new WaitForSeconds(3);
-        isActive = false;
+
+        while (remainingTime > 0)
+        {
+            if (!timeMask.isTimeStopped) // zaman durmadýysa normal countdown
+                remainingTime -= Time.deltaTime;
+
+            yield return null;
+        }
+
         Deactivate();
+        buttonCoroutine = null;
+    }
+
+    public void ExtendDuration(float extraTime)
+    {
+        remainingTime += extraTime;
+    }
+
+    public void Activate()
+    {
+        isActive = true;
+        targetGate?.Activate();
+    }
+
+    public void Deactivate()
+    {
+        isActive = false;
+        targetGate?.Deactivate();
     }
 }

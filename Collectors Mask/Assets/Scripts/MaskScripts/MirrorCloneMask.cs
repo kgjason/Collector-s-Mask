@@ -6,7 +6,8 @@ public class MirrorCloneMask : MonoBehaviour
 {
     public GameObject mirrorClonePrefab;
     public GameObject[] mirrorCloneArr;
-    public bool isCloneMaskActive;
+    public bool isMirrorMaskObtained;
+    public bool isMirrorMaskActive;
     private void Start()
     {       
         mirrorCloneArr = new GameObject[1];
@@ -14,11 +15,11 @@ public class MirrorCloneMask : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isCloneMaskActive)
+        if (Input.GetKeyDown(KeyCode.Space) && isMirrorMaskActive)
         {
             SpawnClone();
         }
-        if (Input.GetKeyDown(KeyCode.C) && isCloneMaskActive)
+        if (Input.GetKeyDown(KeyCode.C) && isMirrorMaskActive)
         {
             ChangePositions();
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Door : MonoBehaviour, IInteractable
 {
@@ -12,15 +13,17 @@ public class Door : MonoBehaviour, IInteractable
     public RetrySystem retrySystem;
     public bool isUsed = false;
 
-    public Vector3 forward = Vector3.right;
-
     private void Awake()
     {
         nextAreaSpawnPos = new Vector3[nextAreaCount];
     }
+
     private void Start()
     {
+        // Starting area
         nextAreaSpawnPos[0] = new Vector3(-5.51f, -3f, 0);
+
+        // RetrySystem spawnPoint'lerini elle atama
         nextAreaSpawnPos[1] = retrySystem.spawnPoint[0];
         nextAreaSpawnPos[2] = retrySystem.spawnPoint[1];
         nextAreaSpawnPos[3] = retrySystem.spawnPoint[2];
@@ -35,11 +38,6 @@ public class Door : MonoBehaviour, IInteractable
         nextAreaSpawnPos[12] = retrySystem.spawnPoint[11];
         nextAreaSpawnPos[13] = retrySystem.spawnPoint[12];
         nextAreaSpawnPos[14] = retrySystem.spawnPoint[13];
-
-
-        //starting area doors
-        
-        
     }
 
     private void Update()
@@ -47,7 +45,6 @@ public class Door : MonoBehaviour, IInteractable
         float distance = Vector3.Distance(player.transform.position, transform.position);
         if (distance <= interactRange)
         {
-            // Press F UI gösterebilirsin
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Activate();
@@ -61,15 +58,65 @@ public class Door : MonoBehaviour, IInteractable
         {
             if (currentIndex >= nextAreaSpawnPos.Length) return;
 
+            // Player'ý taþý
             player.transform.position = nextAreaSpawnPos[currentIndex];
-            retrySystem.levelPassed();
+            retrySystem.LevelPassed();
             currentIndex++;
-        }     
+
+            // Yeni bölüme geçildiðinde aktif olan nesneleri sýfýrla
+            ResetActiveObjectsInScene();
+        }
         isUsed = true;
+    }
+
+    private void ResetActiveObjectsInScene()
+    {
+        // BreakableBlock reset
+        BreakableBlock[] blocks = FindObjectsOfType<BreakableBlock>();
+        foreach (var block in blocks)
+        {
+            block.gameObject.SetActive(true);
+            var sr = block.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.color = Color.white;
+            block.isBreaking = false;
+
+            if (block.invisibleBlockPrefab != null)
+            {
+                // Eðer klon sahnede varsa yok et
+                Transform clone = block.transform.Find(block.invisibleBlockPrefab.name + "(Clone)");
+                if (clone != null)
+                    Destroy(clone.gameObject);
+            }
+        }
+
+        // Button reset
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (var btn in buttons)
+        {
+            btn.isActive = false;
+            btn.Deactivate();
+        }
+
+        // Lever reset
+        Lever[] levers = FindObjectsOfType<Lever>();
+        foreach (var lever in levers)
+        {
+            lever.isActive = false;
+            lever.Deactivate();
+        }
+
+        // TimeMask reset
+        TimeMask timeMask = FindObjectOfType<TimeMask>();
+        if (timeMask != null)
+        {
+            timeMask.enabled = false; // aktifse devre dýþý býrak
+        }
+
+        // Mirror / diðer özel objeler de buraya eklenebilir
     }
 
     public void Deactivate()
     {
-        return;
+        // Kapama iþlemi yok
     }
 }
