@@ -1,0 +1,668 @@
+fileFormatVersion: 2
+guid: d8877e8ba5c6cb64f808b8bfd91fcb7a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ba4c1c78565114dab2736b2a3566a6
+      internalID: -643896346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1589cf74de0a5a47b1a7e505c87cbd9
+      internalID: -1445680739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c064e93297ff1ee458b14d9ad640e6e7
+      internalID: 286147385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_3
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9491ec9c66f6f40a8103750f2228c0
+      internalID: 1845779693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadb7bd073b4237418569181207afaab
+      internalID: 2018445955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_5
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40049d78f6457e94d81ae6d6d2a3e6f6
+      internalID: 1982331463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_6
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00884e33d4374041a309dbfc695050a
+      internalID: 145974299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_7
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 531.3334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b889a9071c973514286f9403b2b53bd7
+      internalID: -1473189681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9614c3324efc7ed4a820ea6130d889af
+      internalID: -1511849848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_9
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87080f77a2d919c4cb93cf9fd0e970da
+      internalID: -325120333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_10
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f53c14ddef0be468c52a375fcf7cce
+      internalID: 509020859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_11
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e4f20bc70136b4db7a9a9f27b5d560
+      internalID: -1570594050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_12
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4e3a4acf915ad49b009050202ba8a0
+      internalID: 1752444303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_13
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51dbafe89a1ed34ab991b6dc58e82bb
+      internalID: -454410620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_14
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026189a0208e5904cb3dab1172d503f1
+      internalID: 829844969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_15
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 266.33334
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5bbaee913487f4d9ba97dda3072cab
+      internalID: 562627166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194017a5ab7a8294a8e2880438e9306b
+      internalID: -1904992898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba25120578d100d429536f7a46fe4d20
+      internalID: 1135846454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_18
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7d26db25521f445a996e2e8694831a
+      internalID: 367905447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_19
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578cb28b15a377a4f9a202be099b8bdc
+      internalID: 774133283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_20
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3895822a1b3547444854a69e98d8f10b
+      internalID: 1633511387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_21
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d082a602644c25438a367a1b2622d15
+      internalID: 895428821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_22
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd49ffc13a6f8a643af7a8644a057889
+      internalID: -255904557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clone-Mask-Clone-Player_23
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1.3333435
+        width: 159
+        height: 265.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20fe814f2610bf4da84e0338a491ed9
+      internalID: 164180410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Clone-Mask-Clone-Player_0: -643896346
+      Clone-Mask-Clone-Player_1: -1445680739
+      Clone-Mask-Clone-Player_10: 509020859
+      Clone-Mask-Clone-Player_11: -1570594050
+      Clone-Mask-Clone-Player_12: 1752444303
+      Clone-Mask-Clone-Player_13: -454410620
+      Clone-Mask-Clone-Player_14: 829844969
+      Clone-Mask-Clone-Player_15: 562627166
+      Clone-Mask-Clone-Player_16: -1904992898
+      Clone-Mask-Clone-Player_17: 1135846454
+      Clone-Mask-Clone-Player_18: 367905447
+      Clone-Mask-Clone-Player_19: 774133283
+      Clone-Mask-Clone-Player_2: 286147385
+      Clone-Mask-Clone-Player_20: 1633511387
+      Clone-Mask-Clone-Player_21: 895428821
+      Clone-Mask-Clone-Player_22: -255904557
+      Clone-Mask-Clone-Player_23: 164180410
+      Clone-Mask-Clone-Player_3: 1845779693
+      Clone-Mask-Clone-Player_4: 2018445955
+      Clone-Mask-Clone-Player_5: 1982331463
+      Clone-Mask-Clone-Player_6: 145974299
+      Clone-Mask-Clone-Player_7: -1473189681
+      Clone-Mask-Clone-Player_8: -1511849848
+      Clone-Mask-Clone-Player_9: -325120333
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

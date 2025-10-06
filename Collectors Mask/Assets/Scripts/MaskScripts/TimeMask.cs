@@ -31,7 +31,7 @@ public class TimeMask : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isTimeMaskActive)
+        if (Input.GetKeyDown(KeyCode.Space) && isTimeMaskActive && isTimeMaskObtained)
         {
             if (!isTimeStopped)
                 StartFreezeTimer();
@@ -39,6 +39,7 @@ public class TimeMask : MonoBehaviour
                 UnfreezeWorld();
         }
     }
+
 
     void StartFreezeTimer()
     {

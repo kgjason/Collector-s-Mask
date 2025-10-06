@@ -1,47 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gate_PPlatePlateAndButton : MonoBehaviour
 {
-    [Header("Connections")]
-    public Gate targetGate;
+    [Header("Required Inputs")]
+    public Button_ForCombo button;
+    public PressurePlate_ForCombo pressurePlate;
+    public PlayerPressurePlate_ForCombo playerPressure;
 
-    // Ön þartlar
-    public PressurePlate pressurePlate;           // herhangi bir obje koyulduðunda aktif olan plate
-    public PlayerPressurePlate playerPressure;    // oyuncu üzerinde ise objectCount > 0
-    public Button button;                         // F ile aktif edilen buton (isActive)
-
-    // Ýç durum takibi
+    private Gate gateComponent;
     private bool gateIsOpen = false;
+
+    private void Start()
+    {
+        gateComponent = GetComponent<Gate>();
+        if (gateComponent == null)
+            Debug.LogError("Gate component not found on " + gameObject.name);
+    }
 
     private void Update()
     {
-        // Referanslarýn baðlý olduðundan emin ol
-        if (targetGate == null || pressurePlate == null || playerPressure == null || button == null)
+        if (button == null || pressurePlate == null || playerPressure == null || gateComponent == null)
             return;
 
-        // Koþullar
-        bool plateOk = pressurePlate.isActive;                 // PressurePlate aktif mi
-        bool playerOk = playerPressure.objectCount > 0;        // PlayerPressurePlate üzerinde oyuncu var mý
-        bool buttonOk = button.isActive;                       // Button aktif mi
+        bool buttonOk = button.isActive;
+        bool plateOk = pressurePlate.isActive;
+        bool playerOk = playerPressure.objectCount > 0;
 
-        // Tümü true ise aç, deðilse kapa
-        if (plateOk && playerOk && buttonOk)
+        // Debug log’larla durumu kontrol et
+        Debug.Log($"[GateCheck] Button:{buttonOk} | Plate:{plateOk} | Player:{playerOk}");
+
+        bool allActive = buttonOk && plateOk && playerOk;
+
+        if (allActive && !gateIsOpen)
         {
-            if (!gateIsOpen)
-            {
-                targetGate.Activate();
-                gateIsOpen = true;
-            }
+            Debug.Log("All active  Gate opening!");
+            gateComponent.Activate();
+            gateIsOpen = true;
         }
-        else
+        else if (!allActive && gateIsOpen)
         {
-            if (gateIsOpen)
-            {
-                targetGate.Deactivate();
-                gateIsOpen = false;
-            }
+            Debug.Log("Condition lost  Gate closing!");
+            gateComponent.Deactivate();
+            gateIsOpen = false;
         }
     }
 }

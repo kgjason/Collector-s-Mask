@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gate_PlatePlatePPlateAndButton : MonoBehaviour
@@ -13,33 +11,41 @@ public class Gate_PlatePlatePPlateAndButton : MonoBehaviour
     public PlayerPressurePlate playerPlate;
     public Button button;
 
+    private bool isActive = false;
+
     private void Update()
     {
-        // Tüm ön þartlar aktif mi?
-        bool allActive = plate1 != null && plate1.isActive &&
-                         plate2 != null && plate2.isActive &&
-                         playerPlate != null && playerPlate.objectCount > 0 &&
-                         button != null && button.isActive;
+        if (plate1 == null || plate2 == null || playerPlate == null || button == null || targetGate == null)
+            return;
 
-        if (allActive)
+        bool allActive =
+            plate1.isActive &&
+            plate2.isActive &&
+            playerPlate.objectCount > 0 &&
+            button.isActive;
+
+        // Durum deðiþtiðinde sadece o zaman tetikle
+        if (allActive && !isActive)
         {
+            isActive = true;
             Activate();
         }
-        else
+        else if (!allActive && isActive)
         {
+            isActive = false;
             Deactivate();
         }
     }
 
-    public void Activate()
+    private void Activate()
     {
-        if (targetGate != null)
-            targetGate.Activate();
+        targetGate.Activate();
+        Debug.Log("Gate (Plate+Plate+PlayerPlate+Button) opened!");
     }
 
-    public void Deactivate()
+    private void Deactivate()
     {
-        if (targetGate != null)
-            targetGate.Deactivate();
+        targetGate.Deactivate();
+        Debug.Log("Gate (Plate+Plate+PlayerPlate+Button) closed!");
     }
 }

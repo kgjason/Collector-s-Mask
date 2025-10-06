@@ -5,13 +5,15 @@ public class Lever_PlateAndButton : MonoBehaviour, IInteractable
     [Header("Connections")]
     public Gate targetGate;
     public PressurePlate activatorPlate;
-    public Button activatorButton;
+    public Button_PlateAndLever activatorButton;
     public PlayerMovement player;
 
     [Header("Settings")]
     public bool isActive;   // Lever açýk mý?
     public bool isLightOn;  // Kullanýlabilir mi?
     public float interactRange = 1.5f;
+
+    private bool hasBeenActivated = false; // Lever kalýcý olarak açýldý mý?
 
     private void Start()
     {
@@ -21,7 +23,11 @@ public class Lever_PlateAndButton : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        // Her frame'de ön þartlarý kontrol et
+        // Eðer zaten kalýcý olarak aktifse artýk hiçbir þey kontrol etme
+        if (hasBeenActivated)
+            return;
+
+        // Plate ve buton kontrolü
         if (activatorPlate != null && activatorButton != null)
         {
             // Her iki ön þart da aktif olmalý
@@ -32,7 +38,7 @@ public class Lever_PlateAndButton : MonoBehaviour, IInteractable
             else
             {
                 isLightOn = false;
-                isActive = false; // biri kapanýrsa lever da kapanýr
+                isActive = false;
             }
         }
 
@@ -41,26 +47,30 @@ public class Lever_PlateAndButton : MonoBehaviour, IInteractable
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                isActive = !isActive;
-
-                if (isActive)
-                    Activate();
-                else
-                    Deactivate();
+                Activate();
+                hasBeenActivated = true; // Artýk hep aktif kalacak
             }
         }
     }
 
     public void Activate()
     {
+        isActive = true;
+
         if (targetGate != null)
             targetGate.Activate();
 
-        Debug.Log("Lever (Plate+Button) turned ON");
+        Debug.Log("Lever (Plate+Button) permanently turned ON");
     }
 
     public void Deactivate()
     {
+        // Artýk devre dýþý býrakma yok — kalýcý hale geldi
+        if (hasBeenActivated)
+            return;
+
+        isActive = false;
+
         if (targetGate != null)
             targetGate.Deactivate();
 

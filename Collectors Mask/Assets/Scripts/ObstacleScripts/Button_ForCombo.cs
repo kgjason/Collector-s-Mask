@@ -1,35 +1,41 @@
 using System.Collections;
 using UnityEngine;
 
-public class Button : MonoBehaviour, IInteractable
+public class Button_ForCombo : MonoBehaviour, IInteractable
 {
-    public Gate targetGate;
-    public bool isLightOn;
-    public bool isActive;
+    public bool isLightOn = true;           // Inspector'dan kontrol edilebilir
+    public bool isActive = false;
     public float interactRange = 1.5f;
     public PlayerMovement player;
-    public TimeMask timeMask; // scene'deki TimeMask referansý
+    public TimeMask timeMask;
 
     private Coroutine buttonCoroutine;
     private float remainingTime = 0f;
 
+    private void Start()
+    {
+        if (player == null)
+            player = FindObjectOfType<PlayerMovement>();
+
+        if (timeMask == null)
+            timeMask = FindObjectOfType<TimeMask>();
+    }
+
     private void Update()
     {
+        if (player == null) return;
+
         if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
         {
             if (Input.GetKeyDown(KeyCode.F))
-            {
                 StartButton(2f);
-            }
         }
     }
 
     public void StartButton(float duration)
     {
         if (buttonCoroutine != null)
-        {
-            remainingTime += duration; // zaten aktifse süre ekle
-        }
+            remainingTime += duration;
         else
         {
             remainingTime = duration;
@@ -41,9 +47,9 @@ public class Button : MonoBehaviour, IInteractable
     {
         Activate();
 
-        while (remainingTime > 0)
+        while (remainingTime > 0f)
         {
-            if (!timeMask.isTimeStopped) // zaman durmadýysa normal countdown
+            if (timeMask == null || !timeMask.isTimeStopped)
                 remainingTime -= Time.deltaTime;
 
             yield return null;
@@ -53,20 +59,7 @@ public class Button : MonoBehaviour, IInteractable
         buttonCoroutine = null;
     }
 
-    public void ExtendDuration(float extraTime)
-    {
-        remainingTime += extraTime;
-    }
+    public void Activate() => isActive = true;
 
-    public void Activate()
-    {
-        isActive = true;
-        targetGate?.Activate();
-    }
-
-    public void Deactivate()
-    {
-        isActive = false;
-        targetGate?.Deactivate();
-    }
+    public void Deactivate() => isActive = false;
 }

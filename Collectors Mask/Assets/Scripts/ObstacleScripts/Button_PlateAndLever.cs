@@ -1,20 +1,30 @@
 using System.Collections;
 using UnityEngine;
 
-public class Button : MonoBehaviour, IInteractable
+public class Button_PlateAndLever : MonoBehaviour, IInteractable
 {
-    public Gate targetGate;
+    [Header("Connections")]
+    public PlayerMovement player;
+    public TimeMask timeMask;
     public bool isLightOn;
     public bool isActive;
     public float interactRange = 1.5f;
-    public PlayerMovement player;
-    public TimeMask timeMask; // scene'deki TimeMask referansý
 
     private Coroutine buttonCoroutine;
     private float remainingTime = 0f;
 
+    private void Start()
+    {
+        if (player == null)
+            player = FindObjectOfType<PlayerMovement>();
+
+        if (timeMask == null)
+            timeMask = FindObjectOfType<TimeMask>();
+    }
+
     private void Update()
     {
+        // Oyuncu yakýnsa ve buton ýþýðý yanýyorsa (kullanýlabilir durumdaysa)
         if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
         {
             if (Input.GetKeyDown(KeyCode.F))
@@ -61,12 +71,10 @@ public class Button : MonoBehaviour, IInteractable
     public void Activate()
     {
         isActive = true;
-        targetGate?.Activate();
     }
 
     public void Deactivate()
     {
         isActive = false;
-        targetGate?.Deactivate();
     }
 }
