@@ -10,9 +10,11 @@ public class CollectMask : MonoBehaviour
     public PlayerMovement player;
     public CloneMask cloneMask;
     public TimeMask timeMask;
+    public MirrorCloneMask mirrorMask;
 
     [SerializeField] private GameObject cloneMaskSprite;
     [SerializeField] private GameObject timeMaskSprite;
+    [SerializeField] private GameObject mirrorMaskSprite;
 
     public Vector3 teleportPoint;
 
@@ -22,6 +24,7 @@ public class CollectMask : MonoBehaviour
         player = GetComponent<PlayerMovement>();
         cloneMask = GetComponent<CloneMask>();
         timeMask = GetComponent<TimeMask>();
+        mirrorMask = GetComponent<MirrorCloneMask>();
         teleportPoint = new Vector3(-5.51f, -0.5f, 0);
     }
 
@@ -57,7 +60,13 @@ public class CollectMask : MonoBehaviour
             Destroy(timeMaskSprite);
             transform.position = teleportPoint;
         }
-        maskChanger.UpdateUI();
+        else
+        {
+             mirrorMask.isMirrorMaskObtained = true;
+            Destroy(mirrorMaskSprite);
+            transform.position = teleportPoint;
+        }
+            maskChanger.UpdateUI();
         maskIndex++;
     }
 

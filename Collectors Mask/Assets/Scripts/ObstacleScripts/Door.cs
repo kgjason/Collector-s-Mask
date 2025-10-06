@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class Door : MonoBehaviour, IInteractable
 {
@@ -28,6 +27,7 @@ public class Door : MonoBehaviour, IInteractable
         nextAreaSpawnPos[2] = retrySystem.spawnPoint[1];
         nextAreaSpawnPos[3] = retrySystem.spawnPoint[2];
         nextAreaSpawnPos[4] = retrySystem.spawnPoint[3];
+
         nextAreaSpawnPos[5] = retrySystem.spawnPoint[4];
         nextAreaSpawnPos[6] = retrySystem.spawnPoint[5];
         nextAreaSpawnPos[7] = retrySystem.spawnPoint[6];
@@ -38,6 +38,8 @@ public class Door : MonoBehaviour, IInteractable
         nextAreaSpawnPos[12] = retrySystem.spawnPoint[11];
         nextAreaSpawnPos[13] = retrySystem.spawnPoint[12];
         nextAreaSpawnPos[14] = retrySystem.spawnPoint[13];
+        nextAreaSpawnPos[15] = retrySystem.spawnPoint[14];
+        nextAreaSpawnPos[16] = retrySystem.spawnPoint[15];
     }
 
     private void Update()
@@ -58,12 +60,12 @@ public class Door : MonoBehaviour, IInteractable
         {
             if (currentIndex >= nextAreaSpawnPos.Length) return;
 
-            // Player'ý taþý
+            // Player'  ta  
             player.transform.position = nextAreaSpawnPos[currentIndex];
             retrySystem.LevelPassed();
             currentIndex++;
 
-            // Yeni bölüme geçildiðinde aktif olan nesneleri sýfýrla
+            // Yeni b l me ge ildi inde aktif olan nesneleri s f rla
             ResetActiveObjectsInScene();
         }
         isUsed = true;
@@ -82,7 +84,7 @@ public class Door : MonoBehaviour, IInteractable
 
             if (block.invisibleBlockPrefab != null)
             {
-                // Eðer klon sahnede varsa yok et
+                // E er klon sahnede varsa yok et
                 Transform clone = block.transform.Find(block.invisibleBlockPrefab.name + "(Clone)");
                 if (clone != null)
                     Destroy(clone.gameObject);
@@ -109,14 +111,14 @@ public class Door : MonoBehaviour, IInteractable
         TimeMask timeMask = FindObjectOfType<TimeMask>();
         if (timeMask != null)
         {
-            timeMask.enabled = false; // aktifse devre dýþý býrak
+            timeMask.enabled = false; // aktifse devre d    b rak
         }
 
-        // Mirror / diðer özel objeler de buraya eklenebilir
+        // Mirror / di er  zel objeler de buraya eklenebilir
     }
 
     public void Deactivate()
     {
-        // Kapama iþlemi yok
+        // Kapama i lemi yok
     }
 }

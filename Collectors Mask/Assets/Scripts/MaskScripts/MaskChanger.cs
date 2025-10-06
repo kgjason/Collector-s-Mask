@@ -22,7 +22,7 @@ public class MaskChanger : MonoBehaviour
     {
         timeMask = GetComponent<TimeMask>();
         cloneMask = GetComponent<CloneMask>();
-        // mirrorMask = GetComponent<MirrorMask>();
+        mirrorMask = GetComponent<MirrorCloneMask>();
         UpdateUI();
         UpdateActiveMask();
     }

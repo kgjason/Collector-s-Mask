@@ -6,9 +6,10 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
     [SerializeField] private MonoBehaviour targetObject;
     private IInteractable interactableTarget;
 
-    public int objectCount = 0;
-    public TimeMask timeMask;
+    [SerializeField] private TimeMask timeMask;
 
+    public bool isActive = false;
+    public int objectCount = 0;
     private Coroutine delayedCoroutine;
 
     private void Start()
@@ -24,7 +25,6 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
         objectCount++;
         if (objectCount >= 1)
         {
-            // Kapý kapanma coroutine’ini iptal et
             if (delayedCoroutine != null)
             {
                 StopCoroutine(delayedCoroutine);
@@ -41,43 +41,49 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
         objectCount--;
         if (objectCount <= 0)
         {
-            // Eðer zaten bekleyen coroutine varsa iptal et
-            if (delayedCoroutine != null)
-            {
-                StopCoroutine(delayedCoroutine);
-                delayedCoroutine = null;
-            }
+            // Zaman durdurulmuþsa (timeMask.isTimeStopped veya Time.timeScale kontrolü)
+            bool isTimeStopped = (timeMask != null && timeMask.isTimeStopped) || Time.timeScale == 0f;
+            Debug.Log($"OnTriggerExit2D: objectCount={objectCount}, isTimeStopped={isTimeStopped}, Time.timeScale={Time.timeScale}, isActive={isActive}");
 
-            // Coroutine baþlat
-            delayedCoroutine = StartCoroutine(DelayedDeactivateCoroutine());
+            if (isTimeStopped)
+            {
+                if (delayedCoroutine != null)
+                {
+                    StopCoroutine(delayedCoroutine);
+                    delayedCoroutine = null;
+                }
+                delayedCoroutine = StartCoroutine(DelayedDeactivate(3f));
+            }
+            else
+            {
+                Deactivate();
+            }
         }
     }
 
-    private IEnumerator DelayedDeactivateCoroutine()
+    private IEnumerator DelayedDeactivate(float delay)
     {
-        // Zaman duruyorsa bekle
-        while (timeMask != null && timeMask.isTimeStopped)
-            yield return null;
-
-        // Zaman devam ettiðinde 3 saniye bekle
-        yield return new WaitForSeconds(3f);
-
-        // Eðer hala kimse yoksa kapat
+        Debug.Log($"DelayedDeactivate started: delay={delay}s, isActive={isActive}");
+        yield return new WaitForSeconds(delay);
         if (objectCount <= 0)
+        {
+            Debug.Log("DelayedDeactivate: Deactivating plate");
             Deactivate();
-
+        }
         delayedCoroutine = null;
     }
 
     public void Activate()
     {
-        if (interactableTarget != null)
-            interactableTarget.Activate();
+        isActive = true;
+        interactableTarget?.Activate();
+        Debug.Log("Plate Activated");
     }
 
     public void Deactivate()
     {
-        if (interactableTarget != null)
-            interactableTarget.Deactivate();
+        isActive = false;
+        interactableTarget?.Deactivate();
+        Debug.Log("Plate Deactivated");
     }
 }

@@ -1,34 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gate_PlateAndPlate : MonoBehaviour
 {
     [Header("Baðlantýlar")]
-    [SerializeField] private PressurePlate plateA;
-    [SerializeField] private PressurePlate plateB;
+    [SerializeField] private PressurePlateForDualGate plateA;
+    [SerializeField] private PressurePlateForDualGate plateB;
+    [SerializeField] private RetrySystem retrySystem;
 
     [Header("Kapý Ayarlarý")]
-    public Vector3 xOffSet = new Vector3(3, 0, 0);
-    public Vector3 yOffSet = new Vector3(0, 3, 0);
+    [SerializeField] private Vector3 xOffSet = new Vector3(3, 0, 0);
+    [SerializeField] private Vector3 yOffSet = new Vector3(0, 3, 0);
     private bool isMoved = false;
 
     private void Start()
     {
+        // Null kontrolleri
         if (plateA == null || plateB == null)
         {
-            Debug.LogError("DualPressureGate: Ýki PressurePlate atanmalý!");
+            Debug.LogError($"Gate_PPlateAndPPlate ({gameObject.name}): PlateA veya PlateB atanmamýþ! PlateA={plateA}, PlateB={plateB}");
+            enabled = false;
+            return;
+        }
+        if (retrySystem == null)
+        {
+            retrySystem = FindObjectOfType<RetrySystem>();
+            if (retrySystem == null)
+                Debug.LogError($"Gate_PPlateAndPPlate ({gameObject.name}): RetrySystem bulunamadý!");
         }
     }
 
     private void Update()
     {
-        // Ýki plaka da aktifse kapý açýlýr, biri pasifse kapanýr
-        if (plateA.isActive && plateB.isActive)
+        if (plateA == null || plateB == null)
+        {
+            Debug.LogWarning($"Gate_PPlateAndPPlate ({gameObject.name}): PlateA veya PlateB eksik!");
+            return;
+        }
+
+        bool bothPlatesActive = plateA.isActive && plateB.isActive;
+        Debug.Log($"[Gate_PPlateAndPPlate] ({gameObject.name}) PlateA: {plateA.isActive}, PlateB: {plateB.isActive}, BothActive: {bothPlatesActive}, isMoved: {isMoved}, TimeStopped: {(plateA.timeMask != null ? plateA.timeMask.isTimeStopped : false)}");
+
+        if (bothPlatesActive && !isMoved)
         {
             Activate();
         }
-        else
+        else if (!bothPlatesActive && isMoved)
         {
             Deactivate();
         }
@@ -44,7 +60,13 @@ public class Gate_PlateAndPlate : MonoBehaviour
             transform.position += xOffSet;
 
         isMoved = true;
-        Debug.Log("Gate opened!");
+        Debug.Log($"Gate_PPlateAndPPlate ({gameObject.name}): Gate opened!");
+
+        if (retrySystem != null)
+        {
+            retrySystem.LevelPassed();
+            Debug.Log($"Gate_PPlateAndPPlate ({gameObject.name}): LevelPassed called, new puzzleIndex: {retrySystem.puzzleIndex}");
+        }
     }
 
     public void Deactivate()
@@ -57,6 +79,6 @@ public class Gate_PlateAndPlate : MonoBehaviour
             transform.position -= xOffSet;
 
         isMoved = false;
-        Debug.Log("Gate closed!");
+        Debug.Log($"Gate_PPlateAndPPlate ({gameObject.name}): Gate closed!");
     }
 }

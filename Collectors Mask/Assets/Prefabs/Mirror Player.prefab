@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8391680107938523630}
   m_Layer: 3
   m_Name: Mirror Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1714942157
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.60910463, b: 1, a: 1}
@@ -115,7 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mirrorClonePrefab: {fileID: 3457112593845721639, guid: e3c4f9184ef40154f94c272c4e96b942, type: 3}
   mirrorCloneArr: []
-  isCloneMaskActive: 0
+  isMirrorMaskObtained: 0
+  isMirrorMaskActive: 0
 --- !u!58 &955937671577183690
 CircleCollider2D:
   m_ObjectHideFlags: 0
