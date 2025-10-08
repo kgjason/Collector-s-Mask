@@ -11,17 +11,17 @@ public class BreakableBlock : MonoBehaviour
     [HideInInspector] public GameObject invisibleBlockClone;
 
     [Header("Time Control")]
-    public TimeMask timeMask; // sahnedeki TimeMask referansý
+    public TimeMask timeMask;
 
     private SpriteRenderer sr;
     private Collider2D col;
+    private Coroutine breakCoroutine;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
 
-        // Player objesini bul ve TimeMask componentini al
         if (timeMask == null)
         {
             PlayerMovement player = FindObjectOfType<PlayerMovement>();
@@ -30,30 +30,34 @@ public class BreakableBlock : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            // Eðer zaman duruyorsa blok kýrýlmasýn
             if (timeMask != null && timeMask.isTimeStopped)
                 return;
 
-            if (!isBreaking)
-                StartCoroutine(BreakBlock());
+            if (!isBreaking && breakCoroutine == null)
+                breakCoroutine = StartCoroutine(BreakBlock());
         }
     }
 
     private IEnumerator BreakBlock()
     {
-        if (isBreaking)
-            yield break;
-
         isBreaking = true;
-
         sr.color = Color.red;
 
         yield return new WaitForSeconds(breakDelay);
+
+        // Retry sýrasýnda break etmeyi iptal et
+        RetrySystem retrySystem = FindObjectOfType<RetrySystem>();
+        if (retrySystem != null && retrySystem.IsRetrying)
+        {
+            isBreaking = false;
+            breakCoroutine = null;
+            sr.color = Color.white;
+            yield break;
+        }
 
         gameObject.SetActive(false);
 
@@ -61,5 +65,28 @@ public class BreakableBlock : MonoBehaviour
         {
             invisibleBlockClone = Instantiate(invisibleBlockPrefab, transform.position, transform.rotation);
         }
+
+        breakCoroutine = null;
+    }
+
+    public void ResetBlock()
+    {
+        if (breakCoroutine != null)
+        {
+            StopCoroutine(breakCoroutine);
+            breakCoroutine = null;
+        }
+
+        if (invisibleBlockClone != null)
+        {
+            Destroy(invisibleBlockClone);
+            invisibleBlockClone = null;
+        }
+
+        isBreaking = false;
+        gameObject.SetActive(true);
+
+        if (sr != null)
+            sr.color = Color.white;
     }
 }

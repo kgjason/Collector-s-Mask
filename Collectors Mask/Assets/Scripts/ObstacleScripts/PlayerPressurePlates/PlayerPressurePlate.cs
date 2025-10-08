@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerPressurePlate : MonoBehaviour, IInteractable
 {
     [SerializeField] public MonoBehaviour targetObject;
+    public bool isActive = false;
     public IInteractable interactableTarget;
     public int objectCount = 0;
     [SerializeField] public TimeMask timeMask;
@@ -71,12 +72,14 @@ public class PlayerPressurePlate : MonoBehaviour, IInteractable
 
     public void Activate()
     {
+        isActive = true;
         interactableTarget?.Activate();
         Debug.Log($"PlayerPressurePlate ({gameObject.name}): Activate called, targetObject={targetObject?.name}");
     }
 
     public void Deactivate()
     {
+        isActive = false;
         interactableTarget?.Deactivate();
         Debug.Log($"PlayerPressurePlate ({gameObject.name}): Deactivate called, targetObject={targetObject?.name}");
     }

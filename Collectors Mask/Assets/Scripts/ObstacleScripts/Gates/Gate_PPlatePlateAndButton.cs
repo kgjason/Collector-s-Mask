@@ -30,7 +30,6 @@ public class Gate_PPlatePlateAndButton : MonoBehaviour
         bool plate2Ok = pressurePlate2.isActive;
 
         // Debug log’larla durumu kontrol et
-        Debug.Log($"[GateCheck] Button: {buttonOk} | Plate1: {plate1Ok} | Plate2: {plate2Ok}");
 
         bool allActive = buttonOk && plate1Ok && plate2Ok;
 

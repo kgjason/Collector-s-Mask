@@ -39,8 +39,6 @@ public class CloneMask : MonoBehaviour
             // Player ve clone pozisyonlarýný swap et, clone spawn offset'ini dikkate al
             Vector3 clonePos = cloneArr[0].transform.position;
             Vector3 playerPos = transform.position;
-
-            // Swap yaparken clone'un spawn offset'ini ekle
             cloneArr[0].transform.position = playerPos;
             transform.position = clonePos;
         }

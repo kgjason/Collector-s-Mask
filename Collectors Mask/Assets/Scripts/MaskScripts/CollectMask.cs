@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectMask : MonoBehaviour
 {
     public float interactRange = 1.5f;
-    private int maskIndex;
     public MaskChanger maskChanger;
     public PlayerMovement player;
     public CloneMask cloneMask;
@@ -16,27 +14,29 @@ public class CollectMask : MonoBehaviour
     [SerializeField] private GameObject timeMaskSprite;
     [SerializeField] private GameObject mirrorMaskSprite;
 
-    public Vector3 teleportPoint;
+    public Vector3 teleportPoint = new Vector3(-5.51f, -0.5f, 0);
 
-    void Awake()
+    private RetrySystem retrySystem;
+
+    private void Awake()
     {
-        maskIndex = 0;
         player = GetComponent<PlayerMovement>();
+        maskChanger = GetComponent<MaskChanger>();
         cloneMask = GetComponent<CloneMask>();
         timeMask = GetComponent<TimeMask>();
         mirrorMask = GetComponent<MirrorCloneMask>();
-        teleportPoint = new Vector3(-5.51f, -0.5f, 0);
+
+        retrySystem = FindObjectOfType<RetrySystem>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(player.transform.position, interactRange);
-
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange);
             foreach (Collider2D hit in hits)
             {
-                if (hit.CompareTag("Player")) continue; // oyuncuyu yok say
+                if (hit.CompareTag("Player")) continue;
                 if (hit.CompareTag("Mask"))
                 {
                     MaskCollected(hit.gameObject);
@@ -48,34 +48,49 @@ public class CollectMask : MonoBehaviour
 
     public void MaskCollected(GameObject maskObject)
     {
-        if (maskIndex == 0)
+        string name = maskObject.name.ToLower();
+
+        if (name.Contains("clone"))
         {
             cloneMask.isCloneMaskObtained = true;
             cloneMask.isCloneMaskActive = true;
             Destroy(cloneMaskSprite);
         }
-        else if (maskIndex == 1)
+        else if (name.Contains("time"))
         {
             timeMask.isTimeMaskObtained = true;
             Destroy(timeMaskSprite);
+
+            // Retry devre dýþý býrak
+            if (retrySystem != null)
+                retrySystem.IsEnabled = false;
+
+            transform.position = teleportPoint;
+        }
+        else if (name.Contains("mirror"))
+        {
+            mirrorMask.isMirrorMaskObtained = true;
+            Destroy(mirrorMaskSprite);
+
+            // Retry devre dýþý býrak
+            if (retrySystem != null)
+                retrySystem.IsEnabled = false;
+
             transform.position = teleportPoint;
         }
         else
         {
-             mirrorMask.isMirrorMaskObtained = true;
-            Destroy(mirrorMaskSprite);
-            transform.position = teleportPoint;
+            Destroy(maskObject);
+            // game ending screen
         }
-            maskChanger.UpdateUI();
-        maskIndex++;
+
+        maskChanger.UpdateUI();
+        maskChanger.UpdateActiveMask();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        if (player != null)
-        {
-            Gizmos.DrawWireSphere(player.transform.position, interactRange);
-        }
+        Gizmos.DrawWireSphere(transform.position, interactRange);
     }
 }
