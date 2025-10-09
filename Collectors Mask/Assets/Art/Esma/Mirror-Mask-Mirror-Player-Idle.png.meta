@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eee027629058e4342aa711e39367f497
+guid: 29bf70507e18ae7429ecf5b5398f7760
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mask-Player-Idle_0
+      name: Mirror-Mask-Mirror-Player-Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f84e8221f373f4bb4b99f5ad0eedaf
-      internalID: -1646725013
+      spriteID: e2389eecc401c944b97909e4c1ca5a02
+      internalID: 928993449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_1
+      name: Mirror-Mask-Mirror-Player-Idle_1
       rect:
         serializedVersion: 2
         x: 210
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea120f6c47879894685c3f5220417fd5
-      internalID: -1183815794
+      spriteID: 507a1b9c33eb2ec48be8ce0454c7e761
+      internalID: -1261609969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_2
+      name: Mirror-Mask-Mirror-Player-Idle_2
       rect:
         serializedVersion: 2
         x: 420
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78014ebc5b9247144a02763eb3e12d51
-      internalID: 2083563313
+      spriteID: 2eee27a620ced0e42ae502162d4b37b9
+      internalID: -242620256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_3
+      name: Mirror-Mask-Mirror-Player-Idle_3
       rect:
         serializedVersion: 2
         x: 630
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f1fb971bb01b0c45b10a16241ee0d1a
-      internalID: -1631324954
+      spriteID: 7e1789abdeb32884b873c7598ae1ef2f
+      internalID: 1930836345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_4
+      name: Mirror-Mask-Mirror-Player-Idle_4
       rect:
         serializedVersion: 2
         x: 840
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2efa9f5a929fab24b8c5a6ea31e490b8
-      internalID: 750771999
+      spriteID: de8b760829b060b4db6c1ed7e240161f
+      internalID: 1293908692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_5
+      name: Mirror-Mask-Mirror-Player-Idle_5
       rect:
         serializedVersion: 2
         x: 1050
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b83a61dedeb18274aa439f61e26ae199
-      internalID: 767876670
+      spriteID: 7c70a609a3a9853449ce6f81ca47ad84
+      internalID: 279933641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_6
+      name: Mirror-Mask-Mirror-Player-Idle_6
       rect:
         serializedVersion: 2
         x: 1260
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e82a90a73a3b16b459e15347dca26065
-      internalID: -1427406727
+      spriteID: 0ac06989ea523a349abc6ce6093392f1
+      internalID: -632597757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_7
+      name: Mirror-Mask-Mirror-Player-Idle_7
       rect:
         serializedVersion: 2
         x: 1470
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e5972488bfd3d242872afd3d1947ed2
-      internalID: 587819946
+      spriteID: d4f703d7cbe56ad4a96e24a3ea45ee08
+      internalID: -1235093919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_8
+      name: Mirror-Mask-Mirror-Player-Idle_8
       rect:
         serializedVersion: 2
         x: 1680
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 270622cfbe8c67546b7140e35cd4e3ca
-      internalID: 407318938
+      spriteID: 012ac268ac922974faa27f43185307dd
+      internalID: -1879620392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_9
+      name: Mirror-Mask-Mirror-Player-Idle_9
       rect:
         serializedVersion: 2
         x: 1890
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f3e73c457fc8864a89d4cbf1afa008e
-      internalID: -413731961
+      spriteID: 2b6be65428351874eb00e4fdde8f4021
+      internalID: -1717886797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_10
+      name: Mirror-Mask-Mirror-Player-Idle_10
       rect:
         serializedVersion: 2
         x: 0
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fd046c3a68fe0049baab715a0ac5499
-      internalID: 1494119160
+      spriteID: 428502bbe4d14654da16d18e0b0926d2
+      internalID: 1461033283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_11
+      name: Mirror-Mask-Mirror-Player-Idle_11
       rect:
         serializedVersion: 2
         x: 210
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8056728b35cb47041b2d7e4856d228cc
-      internalID: -810447853
+      spriteID: d1dfa5ecad22fac4ea4fdc5dbce03dee
+      internalID: 520414366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_12
+      name: Mirror-Mask-Mirror-Player-Idle_12
       rect:
         serializedVersion: 2
         x: 420
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c19a58df152f7f748a7959709495913b
-      internalID: -546183244
+      spriteID: a3045a6adc2e2824687dc17285144e68
+      internalID: 1803033705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_13
+      name: Mirror-Mask-Mirror-Player-Idle_13
       rect:
         serializedVersion: 2
         x: 630
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1544a0a9c4de99442a253837f6c805ce
-      internalID: -595579300
+      spriteID: 07660ad97b89d79409d0be78b78062ed
+      internalID: -1714534348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_14
+      name: Mirror-Mask-Mirror-Player-Idle_14
       rect:
         serializedVersion: 2
         x: 840
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19a4fe1b590dc2342845bc2d60843863
-      internalID: -562953692
+      spriteID: 8c817601275dbc8499bb95ee72b7d718
+      internalID: 1698198824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_15
+      name: Mirror-Mask-Mirror-Player-Idle_15
       rect:
         serializedVersion: 2
         x: 1050
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23a208df49a437e4e9125052481a546d
-      internalID: 668883644
+      spriteID: 7038ad3211bf1e24da4a0a2cc19095cd
+      internalID: -984593217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_16
+      name: Mirror-Mask-Mirror-Player-Idle_16
       rect:
         serializedVersion: 2
         x: 1260
@@ -473,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46c80ee9093b8194c903a85fb3cfbd5b
-      internalID: 1680560691
+      spriteID: a941bf060d22a2c42a58ed9085c12422
+      internalID: 1173956352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_17
+      name: Mirror-Mask-Mirror-Player-Idle_17
       rect:
         serializedVersion: 2
         x: 1470
@@ -494,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 925d9dac0735c7c4aa653e9991178624
-      internalID: -1472482666
+      spriteID: 00d7875160096144a8c7824ad335279e
+      internalID: -966665527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_18
+      name: Mirror-Mask-Mirror-Player-Idle_18
       rect:
         serializedVersion: 2
         x: 1680
@@ -515,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3340a590c7b1bb04fa63d35874f06617
-      internalID: -1858446073
+      spriteID: e1ba23598cbcd4e4382eee23dad3258d
+      internalID: 949626076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_19
+      name: Mirror-Mask-Mirror-Player-Idle_19
       rect:
         serializedVersion: 2
         x: 1890
@@ -536,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a46135ef3a43d044f95a5970a03a3c2f
-      internalID: 1235573056
+      spriteID: 95161c6d4e19d6e45beaf459b70be777
+      internalID: -1636504573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_20
+      name: Mirror-Mask-Mirror-Player-Idle_20
       rect:
         serializedVersion: 2
         x: 0
@@ -557,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db84548124762d848bcf4f1e81f6ff6d
-      internalID: -751282461
+      spriteID: f5214f75c1fe36645b17877947230cd8
+      internalID: -603695414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_21
+      name: Mirror-Mask-Mirror-Player-Idle_21
       rect:
         serializedVersion: 2
         x: 210
@@ -578,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd309691ec0968b47ac7eb461f6ceb3d
-      internalID: 53124045
+      spriteID: e4b854668d722bc44945016b6ab02d46
+      internalID: 2085931132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_22
+      name: Mirror-Mask-Mirror-Player-Idle_22
       rect:
         serializedVersion: 2
         x: 420
@@ -599,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafd5ae4592fe334d8eb1c19a3bf9406
-      internalID: -1278295756
+      spriteID: fa10084b84954764f92b004c40deeb6a
+      internalID: 1353476724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_23
+      name: Mirror-Mask-Mirror-Player-Idle_23
       rect:
         serializedVersion: 2
         x: 630
@@ -620,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aa04ef8a8da68a4a89de1c742a8f655
-      internalID: -1443144072
+      spriteID: 9d05fc437715a80488a783b196efe42b
+      internalID: 1550785715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_24
+      name: Mirror-Mask-Mirror-Player-Idle_24
       rect:
         serializedVersion: 2
         x: 840
@@ -641,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e07f679521b4ee4d9c21d990bc59d62
-      internalID: 1024164020
+      spriteID: a54fd4cfdce236d40a35aadff86dabf0
+      internalID: -1071720104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_25
+      name: Mirror-Mask-Mirror-Player-Idle_25
       rect:
         serializedVersion: 2
         x: 1050
@@ -662,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6142498860efa9f45a9443c7963fd9af
-      internalID: 1757680656
+      spriteID: e9aeb78a3f7a647408aa83c9a3aa4274
+      internalID: -300214777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_26
+      name: Mirror-Mask-Mirror-Player-Idle_26
       rect:
         serializedVersion: 2
         x: 1260
@@ -683,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c7497ce7c5241b4c8b7eae2b3422e5d
-      internalID: -429410978
+      spriteID: ea88e3129055a0344842df2908abfe26
+      internalID: 2109080939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_27
+      name: Mirror-Mask-Mirror-Player-Idle_27
       rect:
         serializedVersion: 2
         x: 1470
@@ -704,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c1811aa8160e004ebd518192ea17d83
-      internalID: -38123628
+      spriteID: 897ce51370370b846a66a67bc5ecb70d
+      internalID: 759698509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_28
+      name: Mirror-Mask-Mirror-Player-Idle_28
       rect:
         serializedVersion: 2
         x: 1680
@@ -725,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0638d8ad673df74dac248f33a840ad5
-      internalID: 633293939
+      spriteID: dd47df1a9a476ef48a6272794822d6bf
+      internalID: -1962811236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mask-Player-Idle_29
+      name: Mirror-Mask-Mirror-Player-Idle_29
       rect:
         serializedVersion: 2
         x: 1890
@@ -746,8 +746,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 040fd81985d00144c8410c95a6d70843
-      internalID: -1758939314
+      spriteID: a0d5a21b795531e469c452f498da2845
+      internalID: -311134638
       vertices: []
       indices: 
       edges: []
@@ -763,36 +763,36 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mask-Player-Idle_0: -1646725013
-      Mask-Player-Idle_1: -1183815794
-      Mask-Player-Idle_10: 1494119160
-      Mask-Player-Idle_11: -810447853
-      Mask-Player-Idle_12: -546183244
-      Mask-Player-Idle_13: -595579300
-      Mask-Player-Idle_14: -562953692
-      Mask-Player-Idle_15: 668883644
-      Mask-Player-Idle_16: 1680560691
-      Mask-Player-Idle_17: -1472482666
-      Mask-Player-Idle_18: -1858446073
-      Mask-Player-Idle_19: 1235573056
-      Mask-Player-Idle_2: 2083563313
-      Mask-Player-Idle_20: -751282461
-      Mask-Player-Idle_21: 53124045
-      Mask-Player-Idle_22: -1278295756
-      Mask-Player-Idle_23: -1443144072
-      Mask-Player-Idle_24: 1024164020
-      Mask-Player-Idle_25: 1757680656
-      Mask-Player-Idle_26: -429410978
-      Mask-Player-Idle_27: -38123628
-      Mask-Player-Idle_28: 633293939
-      Mask-Player-Idle_29: -1758939314
-      Mask-Player-Idle_3: -1631324954
-      Mask-Player-Idle_4: 750771999
-      Mask-Player-Idle_5: 767876670
-      Mask-Player-Idle_6: -1427406727
-      Mask-Player-Idle_7: 587819946
-      Mask-Player-Idle_8: 407318938
-      Mask-Player-Idle_9: -413731961
+      Mirror-Mask-Mirror-Player-Idle_0: 928993449
+      Mirror-Mask-Mirror-Player-Idle_1: -1261609969
+      Mirror-Mask-Mirror-Player-Idle_10: 1461033283
+      Mirror-Mask-Mirror-Player-Idle_11: 520414366
+      Mirror-Mask-Mirror-Player-Idle_12: 1803033705
+      Mirror-Mask-Mirror-Player-Idle_13: -1714534348
+      Mirror-Mask-Mirror-Player-Idle_14: 1698198824
+      Mirror-Mask-Mirror-Player-Idle_15: -984593217
+      Mirror-Mask-Mirror-Player-Idle_16: 1173956352
+      Mirror-Mask-Mirror-Player-Idle_17: -966665527
+      Mirror-Mask-Mirror-Player-Idle_18: 949626076
+      Mirror-Mask-Mirror-Player-Idle_19: -1636504573
+      Mirror-Mask-Mirror-Player-Idle_2: -242620256
+      Mirror-Mask-Mirror-Player-Idle_20: -603695414
+      Mirror-Mask-Mirror-Player-Idle_21: 2085931132
+      Mirror-Mask-Mirror-Player-Idle_22: 1353476724
+      Mirror-Mask-Mirror-Player-Idle_23: 1550785715
+      Mirror-Mask-Mirror-Player-Idle_24: -1071720104
+      Mirror-Mask-Mirror-Player-Idle_25: -300214777
+      Mirror-Mask-Mirror-Player-Idle_26: 2109080939
+      Mirror-Mask-Mirror-Player-Idle_27: 759698509
+      Mirror-Mask-Mirror-Player-Idle_28: -1962811236
+      Mirror-Mask-Mirror-Player-Idle_29: -311134638
+      Mirror-Mask-Mirror-Player-Idle_3: 1930836345
+      Mirror-Mask-Mirror-Player-Idle_4: 1293908692
+      Mirror-Mask-Mirror-Player-Idle_5: 279933641
+      Mirror-Mask-Mirror-Player-Idle_6: -632597757
+      Mirror-Mask-Mirror-Player-Idle_7: -1235093919
+      Mirror-Mask-Mirror-Player-Idle_8: -1879620392
+      Mirror-Mask-Mirror-Player-Idle_9: -1717886797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

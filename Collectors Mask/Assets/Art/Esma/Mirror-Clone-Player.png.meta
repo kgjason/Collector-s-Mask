@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3a0eb6d9a145f4699415b94dd1656d
+      internalID: -369326392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d2977edb8f3224ab93018073702d96
+      internalID: 26427647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c154c97b4a412fd42b312f2d7a10d0dc
+      internalID: 2045896309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5090dbea1e92a9a4b9912c5c510e7068
+      internalID: -1242342806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8676352bd642f341b50d1ea21cb2f6f
+      internalID: -342016074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4195f69bcf2847844a44d4b5d26d284e
+      internalID: 130754849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf81372fa6d9a64eb9b8685335d62c6
+      internalID: 1213736247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 533.3334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79439af3c805ef14289345c147844e13
+      internalID: -2125156143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efad8571cd9a0d14a9ba148fe9b92a1a
+      internalID: -1847864618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d17432123ae5a4989c08c7fe370215
+      internalID: -1746374483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8201c816ba2e740a407f99802ab1fd
+      internalID: -1625193929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47bb58ca06f1274f9e89dc24415b215
+      internalID: -1829856702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_12
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718c72b666015b642af29ea37c45b697
+      internalID: 336240520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_13
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8c9ee3a0991474ca35663bf6c11262
+      internalID: -147209717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_14
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e69cd810a7cfba4da80a38083995b33
+      internalID: 1005597707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_15
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 267.33334
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a67cc56e5b99c1468b4a90690923287
+      internalID: -67225416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd96989e020fe8d42a156e9f462a0612
+      internalID: 1716109241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ed75122d0abae4f93ffab06117b6ab
+      internalID: -1911581995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_18
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8315ece4671309a43a0ddb90c5c00651
+      internalID: -685044691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_19
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719932183d947c34cb2ab9ae89107552
+      internalID: -1574961460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ca05e242bcb4348a222dda371e27a0
+      internalID: -2027203871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ddb7dadb1e321459fb8b93d93d4374
+      internalID: 1660940232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_22
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c95e78cb6af8c34fb9033a8e3ad692f
+      internalID: 30891517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mirror-Clone-Player_23
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1.3333435
+        width: 160
+        height: 266.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5808e4279d5cdaf42b0361220bdaa769
+      internalID: -1000178638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +636,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mirror-Clone-Player_0: -369326392
+      Mirror-Clone-Player_1: 26427647
+      Mirror-Clone-Player_10: -1625193929
+      Mirror-Clone-Player_11: -1829856702
+      Mirror-Clone-Player_12: 336240520
+      Mirror-Clone-Player_13: -147209717
+      Mirror-Clone-Player_14: 1005597707
+      Mirror-Clone-Player_15: -67225416
+      Mirror-Clone-Player_16: 1716109241
+      Mirror-Clone-Player_17: -1911581995
+      Mirror-Clone-Player_18: -685044691
+      Mirror-Clone-Player_19: -1574961460
+      Mirror-Clone-Player_2: 2045896309
+      Mirror-Clone-Player_20: -2027203871
+      Mirror-Clone-Player_21: 1660940232
+      Mirror-Clone-Player_22: 30891517
+      Mirror-Clone-Player_23: -1000178638
+      Mirror-Clone-Player_3: -1242342806
+      Mirror-Clone-Player_4: -342016074
+      Mirror-Clone-Player_5: 130754849
+      Mirror-Clone-Player_6: 1213736247
+      Mirror-Clone-Player_7: -2125156143
+      Mirror-Clone-Player_8: -1847864618
+      Mirror-Clone-Player_9: -1746374483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

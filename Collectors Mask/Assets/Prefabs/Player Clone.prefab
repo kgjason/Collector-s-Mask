@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2794328986489139162}
   - component: {fileID: -4737061107660447414}
   - component: {fileID: 4613014125488116818}
+  - component: {fileID: -6958980050813043687}
   m_Layer: 6
   m_Name: Player Clone
   m_TagString: PlayerClone
@@ -148,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6958980050813043687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757874224671482753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecdbb91adec103458d5010727524798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2794328986489139162}
+  upSprite: {fileID: -1904992898, guid: d8877e8ba5c6cb64f808b8bfd91fcb7a, type: 3}
+  downSprite: {fileID: -643896346, guid: d8877e8ba5c6cb64f808b8bfd91fcb7a, type: 3}
+  rightSprite: {fileID: -1511849848, guid: d8877e8ba5c6cb64f808b8bfd91fcb7a, type: 3}

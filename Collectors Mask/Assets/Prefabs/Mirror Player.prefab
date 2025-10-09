@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.60910463, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  spriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
+  timeMask: {fileID: 0}
 --- !u!114 &2273565659155173705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,10 +116,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9663a96ef6e26c4797c08ce456e0acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorClonePrefab: {fileID: 3457112593845721639, guid: e3c4f9184ef40154f94c272c4e96b942, type: 3}
-  mirrorCloneArr: []
   isMirrorMaskObtained: 0
   isMirrorMaskActive: 0
+  isMirrorWorldActive: 0
+  mirrorWorld: {fileID: 0}
+  mirrorWorldWall: {fileID: 0}
+  mirrorPlayer: {fileID: 0}
+  mirrorLevels: {fileID: 0}
 --- !u!58 &955937671577183690
 CircleCollider2D:
   m_ObjectHideFlags: 0

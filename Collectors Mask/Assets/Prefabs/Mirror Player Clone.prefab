@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7784177069598790026}
   - component: {fileID: -2937479741387065152}
   - component: {fileID: -5183276363249826212}
+  - component: {fileID: -1247160799450996272}
   m_Layer: 6
   m_Name: Mirror Player Clone
   m_TagString: PlayerClone
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 1185225057
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.60910463, b: 1, a: 0.24313726}
+  m_Sprite: {fileID: -369326392, guid: 7d7473e083f326443b856057e8e53a31, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.70980394}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   cloneArr: []
   isCloneMaskObtained: 0
   isCloneMaskActive: 0
+  playerMovement: {fileID: 0}
 --- !u!50 &-2937479741387065152
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +167,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-1247160799450996272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3457112593845721639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df01b00c1b0122468cb807c92a00604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2365500918457082258}
+  upSprite: {fileID: 1716109241, guid: 7d7473e083f326443b856057e8e53a31, type: 3}
+  downSprite: {fileID: -369326392, guid: 7d7473e083f326443b856057e8e53a31, type: 3}
+  rightSprite: {fileID: -1847864618, guid: 7d7473e083f326443b856057e8e53a31, type: 3}

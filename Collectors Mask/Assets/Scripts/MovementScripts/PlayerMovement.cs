@@ -1,76 +1,65 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float speed = 5f;
+
+    [Header("Components")]
+    public SpriteRenderer spriteRenderer; // Player sprite
+    public Animator animator;             // Animator Controller
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
-    private Vector2 lastDirection = Vector2.down;
+    private Vector2 lastMoveDir = Vector2.down;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        moveInput = new Vector2(x, y).normalized;
+        // Input al
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
 
-        bool moving = moveInput != Vector2.zero;
-        animator.SetBool("isRunning", moving);
+        if (moveInput.sqrMagnitude > 1)
+            moveInput.Normalize();
 
-        if (moving)
-        {
-            lastDirection = moveInput;
+        bool isMoving = moveInput.sqrMagnitude > 0.01f;
 
-            if (Mathf.Abs(x) > Mathf.Abs(y))
-            {
-                animator.SetBool("isRight", x > 0);
-                animator.SetBool("isLeft", x < 0);
-                animator.SetBool("isUp", false);
-                animator.SetBool("isDown", false);
+        // Son yönü güncelle
+        if (isMoving)
+            lastMoveDir = moveInput;
 
-                spriteRenderer.flipX = animator.GetBool("isLeft");
-            }
-            else
-            {
-                animator.SetBool("isRight", false);
-                animator.SetBool("isLeft", false);
-                animator.SetBool("isUp", y > 0);
-                animator.SetBool("isDown", y < 0);
+        // Animator parametrelerini güncelle
+        animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveX", isMoving ? moveInput.x : lastMoveDir.x);
+        animator.SetFloat("moveY", isMoving ? moveInput.y : lastMoveDir.y);
 
-                spriteRenderer.flipX = false;
-            }
-        }
-        else
-        {
-            animator.SetBool("isRight", false);
-            animator.SetBool("isLeft", false);
-            animator.SetBool("isUp", false);
-            animator.SetBool("isDown", false);
-
-            spriteRenderer.flipX = lastDirection.x < 0;
-        }
+        // FlipX artýk lastMoveDir üzerinden
+        spriteRenderer.flipX = lastMoveDir.x < -0.1f;
     }
 
     private void FixedUpdate()
     {
-        Vector2 targetPos = (rb.position + moveInput * speed * Time.fixedDeltaTime);
-
-        RaycastHit2D hit = Physics2D.CircleCast(rb.position, 0.1f, moveInput, speed * Time.fixedDeltaTime, LayerMask.GetMask("Wall"));
-        if (hit.collider != null)
-        {
-            // Duvar varsa hareket etme
+        if (moveInput.sqrMagnitude < 0.01f)
             return;
-        }
 
-        rb.MovePosition(targetPos);
+        Vector2 targetPos = rb.position + moveInput * speed * Time.fixedDeltaTime;
+
+        // Duvar çarpýþma kontrolü
+        RaycastHit2D hit = Physics2D.CircleCast(rb.position, 0.1f, moveInput, speed * Time.fixedDeltaTime, LayerMask.GetMask("Wall"));
+        if (hit.collider == null)
+        {
+            rb.MovePosition(targetPos);
+        }
     }
+    public Vector2 GetLastMoveDir()
+    {
+        return lastMoveDir;
+    }
+
 }
