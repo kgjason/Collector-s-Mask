@@ -7,6 +7,7 @@ public class Button_ForCombo : MonoBehaviour, IInteractable
     public bool isActive = false;
     public float interactRange = 1.5f;
     public PlayerMovement player;
+    public MirrorPlayerMovement mirrorPlayer;
     public TimeMask timeMask;
 
     private Coroutine buttonCoroutine;
@@ -25,7 +26,7 @@ public class Button_ForCombo : MonoBehaviour, IInteractable
     {
         if (player == null) return;
 
-        if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
+        if ((Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn) || (Vector3.Distance(mirrorPlayer.transform.position, transform.position) <= interactRange && isLightOn))
         {
             if (Input.GetKeyDown(KeyCode.F))
                 StartButton(2f);

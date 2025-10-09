@@ -5,13 +5,21 @@ using UnityEngine;
 public class MirrorPlayerMovement : MonoBehaviour, ITimeFreezable
 {
     public int speed = 5;
+    public TimeMask timeMask;
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal") * -1;
         float y = Input.GetAxisRaw("Vertical");
 
         Vector3 move = new Vector3(x, y, 0).normalized;
-        transform.position += move * speed * Time.deltaTime;
+        if (timeMask.isTimeStopped)
+        {
+            FreezeTime();
+        } else
+        {
+            UnfreezeTime();
+        }
+            transform.position += move * speed * Time.deltaTime;
     }
     public void FreezeTime()
     {

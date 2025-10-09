@@ -79,14 +79,6 @@ public class RetrySystem : MonoBehaviour
 
         int originalIndex = puzzleIndex;
 
-        // Player pozisyonuna göre puzzleIndex ayarlamasý (opsiyonel)
-        if (puzzleIndex > 0 && player != null)
-        {
-            float dist = Vector3.Distance(player.transform.position, spawnPoint[puzzleIndex]);
-            if (dist > 10f)
-                puzzleIndex--;
-        }
-
         // Player reset
         if (player != null && spawnPoint != null && puzzleIndex >= 0 && puzzleIndex < spawnPoint.Length)
         {

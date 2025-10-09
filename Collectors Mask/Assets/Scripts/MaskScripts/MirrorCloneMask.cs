@@ -1,44 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MirrorCloneMask : MonoBehaviour
 {
-    public GameObject mirrorClonePrefab;
-    public GameObject[] mirrorCloneArr;
     public bool isMirrorMaskObtained;
     public bool isMirrorMaskActive;
+    public bool isMirrorWorldActive;
+    public GameObject mirrorWorld;
+    public GameObject mirrorWorldWall;
+    public GameObject mirrorPlayer;
+    public GameObject mirrorLevels;
     private void Start()
-    {       
-        mirrorCloneArr = new GameObject[1];
-        //isCloneMaskActive = true;
+    {
+        isMirrorWorldActive = false;
+        DeactivateMirrorWorld();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isMirrorMaskActive)
         {
-            SpawnClone();
-        }
-        if (Input.GetKeyDown(KeyCode.C) && isMirrorMaskActive)
-        {
-            ChangePositions();
+            isMirrorWorldActive = !isMirrorWorldActive;
+            if (isMirrorWorldActive)
+            {
+                ActivateMirrorWorld();
+            } else
+            {
+                DeactivateMirrorWorld();
+            }
         }
     }
-    public void SpawnClone()
+    public void ActivateMirrorWorld()
     {
-        if (mirrorCloneArr[0] != null)
-        {
-            Destroy(mirrorCloneArr[0]);
-        }
-        mirrorCloneArr[0] = Instantiate(mirrorClonePrefab, transform.position, Quaternion.identity);
+        mirrorPlayer.SetActive(true);
+        mirrorLevels.SetActive(true);
+        mirrorWorld.SetActive(true);
+        mirrorWorldWall.SetActive(true);
     }
-    public void ChangePositions()
+    public void DeactivateMirrorWorld()
     {
-        if (mirrorCloneArr[0] != null)
-        {
-            Vector3 tempPos = mirrorCloneArr[0].transform.position;
-            mirrorCloneArr[0].transform.position = transform.position;
-            transform.position = tempPos;
-        }
+        mirrorPlayer.SetActive(false);
+        mirrorLevels.SetActive(false);
+        mirrorWorld.SetActive(false);
+        mirrorWorldWall.SetActive(false);
     }
 }
