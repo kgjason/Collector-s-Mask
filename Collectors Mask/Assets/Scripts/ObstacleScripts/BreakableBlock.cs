@@ -15,12 +15,14 @@ public class BreakableBlock : MonoBehaviour
 
     private SpriteRenderer sr;
     private Collider2D col;
+    private Animator animator;
     private Coroutine breakCoroutine;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
 
         if (timeMask == null)
         {
@@ -45,17 +47,21 @@ public class BreakableBlock : MonoBehaviour
     private IEnumerator BreakBlock()
     {
         isBreaking = true;
-        sr.color = Color.red;
+
+        // Animasyon baþlasýn
+        if (animator != null)
+            animator.SetBool("isBreaking", true);
 
         yield return new WaitForSeconds(breakDelay);
 
-        // Retry sýrasýnda break etmeyi iptal et
+        // Retry sýrasýnda kýrýlmayý iptal et
         RetrySystem retrySystem = FindObjectOfType<RetrySystem>();
         if (retrySystem != null && retrySystem.IsRetrying)
         {
             isBreaking = false;
+            if (animator != null)
+                animator.SetBool("isBreaking", false);
             breakCoroutine = null;
-            sr.color = Color.white;
             yield break;
         }
 
@@ -84,9 +90,10 @@ public class BreakableBlock : MonoBehaviour
         }
 
         isBreaking = false;
-        gameObject.SetActive(true);
 
-        if (sr != null)
-            sr.color = Color.white;
+        if (animator != null)
+            animator.SetBool("isBreaking", false);
+
+        gameObject.SetActive(true);
     }
 }

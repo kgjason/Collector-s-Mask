@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class TimeMask : MonoBehaviour
 {
+    [Header("Mask Settings")]
     public bool isTimeStopped = false;
     public bool isTimeMaskActive;
     public bool isTimeMaskObtained;
     [SerializeField] private float freezeDuration = 3f;
 
+    [Header("References")]
     private List<ITimeFreezable> freezables = new List<ITimeFreezable>();
     private Button[] allButtons;
     private Coroutine freezeCoroutine;
+    private TimeStopOverlay overlay; // yeni eklendi
 
     void Awake()
     {
@@ -27,6 +30,13 @@ public class TimeMask : MonoBehaviour
 
         // Sahnedeki tüm buttonlarý bir kez bul
         allButtons = FindObjectsOfType<Button>();
+
+        // Overlay referansýný bul
+        overlay = FindObjectOfType<TimeStopOverlay>();
+        if (overlay == null)
+        {
+            Debug.LogWarning("TimeStopOverlay bulunamadý! (Canvas'a eklemeyi unutma)");
+        }
     }
 
     void Update()
@@ -39,7 +49,6 @@ public class TimeMask : MonoBehaviour
                 UnfreezeWorld();
         }
     }
-
 
     void StartFreezeTimer()
     {
@@ -74,6 +83,10 @@ public class TimeMask : MonoBehaviour
     {
         isTimeStopped = true;
 
+        // Overlay efektini baþlat
+        if (overlay != null)
+            overlay.StartOverlay(freezeDuration);
+
         // Tüm ITimeFreezable objelerini durdur
         foreach (var f in freezables)
             f.FreezeTime();
@@ -84,6 +97,10 @@ public class TimeMask : MonoBehaviour
     public void UnfreezeWorld()
     {
         isTimeStopped = false;
+
+        // Overlay efektini kapat
+        if (overlay != null)
+            overlay.EndOverlay();
 
         // Tüm ITimeFreezable objelerini tekrar hareket ettir
         foreach (var f in freezables)

@@ -1,54 +1,72 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Lever : MonoBehaviour, IInteractable
 {
+    [Header("Connections")]
     public Gate targetGate;
-    public bool isLightOn;
-    public bool isActive;
-    public float interactRange = 1.5f;
     public PlayerMovement player;
+
+    [Header("Sprites")]
+    public Sprite leverOffSprite;
+    public Sprite leverOnSprite;
+    private SpriteRenderer spriteRenderer;
+
+    [Header("Settings")]
+    public bool isLightOn = true;
+    public bool isActive = false;
+    public float interactRange = 1.5f;
+
     private void Start()
     {
-        isActive = false;
-        isLightOn = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+            Debug.LogWarning($"{name}: SpriteRenderer eksik!");
+
+        UpdateLeverVisual();
     }
+
     private void Update()
     {
+        if (player == null) return;
+
         if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
         {
-            
             if (Input.GetKeyDown(KeyCode.F))
             {
                 isActive = !isActive;
                 if (isActive)
-                {
                     Activate();
-                }
                 else
-                {
                     Deactivate();
-                }
-            }                
+            }
         }
     }
+
     public void Activate()
     {
-        //play lever turn on animasyonu
+        isActive = true;
+        UpdateLeverVisual();
+
         if (targetGate != null)
-        {
             targetGate.Activate();
-        }
-        Debug.Log("lever turned on");
+
+        Debug.Log("Lever turned on");
     }
+
     public void Deactivate()
     {
-        //play lever turn off animasyonu
+        isActive = false;
+        UpdateLeverVisual();
+
         if (targetGate != null)
-        {
             targetGate.Deactivate();
-        }
-        Debug.Log("lever turned off");
+
+        Debug.Log("Lever turned off");
+    }
+
+    private void UpdateLeverVisual()
+    {
+        if (spriteRenderer == null) return;
+        spriteRenderer.sprite = isActive ? leverOnSprite : leverOffSprite;
     }
 }

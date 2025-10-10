@@ -1,26 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MirrorLever : MonoBehaviour, IInteractable
 {
+    [Header("Connections")]
     public Gate targetGate;
-    public bool isLightOn;
-    public bool isActive;
+    public MirrorPlayerMovement player;
+
+    [Header("Sprites")]
+    public Sprite leverOffSprite;
+    public Sprite leverOnSprite;
+    private SpriteRenderer spriteRenderer;
+
+    [Header("Settings")]
+    public bool isLightOn = true;
+    public bool isActive = false;
     public float interactRange = 1.5f;
-    public MirrorPlayerMovement player; // PlayerMovement yerine MirrorPlayerMovement
 
     private void Start()
     {
-        isActive = false;
-        isLightOn = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        UpdateLeverVisual();
     }
 
     private void Update()
     {
         if (player == null)
         {
-            Debug.LogWarning("Lever: MirrorPlayerMovement bileþeni atanmamýþ!");
+            Debug.LogWarning($"{name}: MirrorPlayerMovement atanmadý!");
             return;
         }
 
@@ -29,35 +35,31 @@ public class MirrorLever : MonoBehaviour, IInteractable
             if (Input.GetKeyDown(KeyCode.F))
             {
                 isActive = !isActive;
-                if (isActive)
-                {
-                    Activate();
-                }
-                else
-                {
-                    Deactivate();
-                }
+                if (isActive) Activate();
+                else Deactivate();
             }
         }
     }
 
     public void Activate()
     {
-        // Play lever turn on animasyonu
-        if (targetGate != null)
-        {
-            targetGate.Activate();
-        }
-        Debug.Log("Lever turned on");
+        isActive = true;
+        UpdateLeverVisual();
+        targetGate?.Activate();
+        Debug.Log("MirrorLever turned on");
     }
 
     public void Deactivate()
     {
-        // Play lever turn off animasyonu
-        if (targetGate != null)
-        {
-            targetGate.Deactivate();
-        }
-        Debug.Log("Lever turned off");
+        isActive = false;
+        UpdateLeverVisual();
+        targetGate?.Deactivate();
+        Debug.Log("MirrorLever turned off");
+    }
+
+    private void UpdateLeverVisual()
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = isActive ? leverOnSprite : leverOffSprite;
     }
 }

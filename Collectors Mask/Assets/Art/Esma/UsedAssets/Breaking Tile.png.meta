@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11bc63c87a1fbef4b876ee07cf352bec
+guid: 08f9af6d7418eb042b79aa05722386a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,148 +123,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button1_0
+      name: Breaking Tile_0
       rect:
         serializedVersion: 2
-        x: 50
+        x: 0
         y: 0
-        width: 105
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18133285ccc52543ad71056103b5990
-      internalID: 158697688
+      spriteID: 2481234b42e2683439cb524000be14b8
+      internalID: -897690127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button1_1
+      name: Breaking Tile_1
       rect:
         serializedVersion: 2
-        x: 103
+        x: 160
         y: 0
-        width: 53.636364
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 682c7ecb403ce6f4daba8d338c8358f2
-      internalID: -1619010965
+      spriteID: 3f6755701a3584d429a83b557f97747c
+      internalID: 1457478027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button1_2
+      name: Breaking Tile_2
       rect:
         serializedVersion: 2
-        x: 157
+        x: 320
         y: 0
-        width: 110
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 2, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99aa9683d9ddc8245b06ee24d1b0ed66
-      internalID: 1126343796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button1_3
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 0
-        width: 53.636364
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8bef2ff3b6548409e85d3c3ba09d8c
-      internalID: 1728916733
+      spriteID: eb1c9030faa26f249b33c42df18f0087
+      internalID: -568829245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button1_4
+      name: Breaking Tile_3
       rect:
         serializedVersion: 2
-        x: 262
+        x: 480
         y: 0
-        width: 114
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca69d9b0c74cd604b9a8bd6c4af43a48
-      internalID: -1508229189
+      spriteID: 190caba70b719d94bb47f577847ea428
+      internalID: -1726876862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button1_5
+      name: Breaking Tile_4
       rect:
         serializedVersion: 2
-        x: 315
+        x: 640
         y: 0
-        width: 53.636364
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd68c0ce1c5b52a4d96bd68b05a3f88b
-      internalID: -1366593969
+      spriteID: 0dceecd7c5fe40a40885ae52b338d70f
+      internalID: 1317495063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button1_6
+      name: Breaking Tile_5
       rect:
         serializedVersion: 2
-        x: 368
+        x: 800
         y: 0
-        width: 53.636364
-        height: 640
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e893dd896452ce4c8c6b72583f9f7cd
-      internalID: 957721056
+      spriteID: 3b1ca436cc53ff948b9364a06b194894
+      internalID: -1290052019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking Tile_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9938b452f3c0931458e5654cb26d93a1
+      internalID: 776379616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking Tile_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3cdbbcec441914d8e825b3e70f9e1d
+      internalID: -1040705629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking Tile_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d2f93a66ae47841824a613af6f9675
+      internalID: 877858599
       vertices: []
       indices: 
       edges: []
@@ -280,13 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Button1_0: 158697688
-      Button1_1: -1619010965
-      Button1_2: 1126343796
-      Button1_3: 1728916733
-      Button1_4: -1508229189
-      Button1_5: -1366593969
-      Button1_6: 957721056
+      Breaking Tile_0: -897690127
+      Breaking Tile_1: 1457478027
+      Breaking Tile_2: -568829245
+      Breaking Tile_3: -1726876862
+      Breaking Tile_4: 1317495063
+      Breaking Tile_5: -1290052019
+      Breaking Tile_6: 776379616
+      Breaking Tile_7: -1040705629
+      Breaking Tile_8: 877858599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

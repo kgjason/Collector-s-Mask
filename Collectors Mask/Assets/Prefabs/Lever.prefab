@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1144393946, guid: 738930431862cd9419562c18f5124c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,10 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGate: {fileID: 0}
+  player: {fileID: 0}
+  leverOffSprite: {fileID: 1144393946, guid: 738930431862cd9419562c18f5124c03, type: 3}
+  leverOnSprite: {fileID: 946048839, guid: 738930431862cd9419562c18f5124c03, type: 3}
   isLightOn: 1
   isActive: 0
   interactRange: 1.5
-  player: {fileID: 0}
 --- !u!58 &8660046146019427945
 CircleCollider2D:
   m_ObjectHideFlags: 0

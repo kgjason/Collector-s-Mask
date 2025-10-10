@@ -1,63 +1,65 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Lever1C : MonoBehaviour, IInteractable
 {
+    [Header("Connections")]
     public Gate targetGate;
     public PressurePlateL activater;
-    public bool isLightOn;
-    public bool isActive;
-    public float interactRange = 1.5f;
     public PlayerMovement player;
+
+    [Header("Sprites")]
+    public Sprite leverOffSprite;
+    public Sprite leverOnSprite;
+    private SpriteRenderer spriteRenderer;
+
+    [Header("Settings")]
+    public bool isLightOn = false;
+    public bool isActive = false;
+    public float interactRange = 1.5f;
+
     private void Start()
     {
-        isActive = false;
-        isLightOn = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        UpdateLeverVisual();
     }
+
     private void Update()
     {
-        if (activater.isActive)
-        {
-            isLightOn = true;
-        } else
-        {
-            isActive = false;
-        }
+        if (player == null) return;
+
+        if (activater != null)
+            isLightOn = activater.isActive;
+
         if (Vector3.Distance(player.transform.position, transform.position) <= interactRange && isLightOn)
         {
-
             if (Input.GetKeyDown(KeyCode.F))
             {
                 isActive = !isActive;
-                if (isActive)
-                {
-                    Activate();
-                }
-                else
-                {
-                    Deactivate();
-                }
+                if (isActive) Activate();
+                else Deactivate();
             }
         }
     }
+
     public void Activate()
     {
-        //play lever turn on animasyonu
-        if (targetGate != null)
-        {
-            targetGate.Activate();
-        }
-        Debug.Log("lever turned on");
+        isActive = true;
+        UpdateLeverVisual();
+        targetGate?.Activate();
+        Debug.Log("Lever1C turned on");
     }
+
     public void Deactivate()
     {
-        //play lever turn off animasyonu
-        if (targetGate != null)
-        {
-            targetGate.Deactivate();
-        }
-        Debug.Log("lever turned off");
+        isActive = false;
+        UpdateLeverVisual();
+        targetGate?.Deactivate();
+        Debug.Log("Lever1C turned off");
+    }
+
+    private void UpdateLeverVisual()
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = isActive ? leverOnSprite : leverOffSprite;
     }
 }
-
