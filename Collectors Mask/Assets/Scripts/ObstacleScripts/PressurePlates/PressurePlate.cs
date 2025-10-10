@@ -7,7 +7,10 @@ public class PressurePlate : MonoBehaviour, IInteractable
     private IInteractable interactableTarget;
     public bool isActive;
     public int objectCount = 0;
-    public TimeMask timeMask; // scene'deki TimeMask referansý
+    public TimeMask timeMask;
+
+    [Header("Animation")]
+    public Animator animator; //  Ekledik
 
     private void Start()
     {
@@ -29,8 +32,8 @@ public class PressurePlate : MonoBehaviour, IInteractable
         objectCount--;
         if (objectCount <= 0)
         {
-            if (timeMask.isTimeStopped)
-                StartCoroutine(DelayedDeactivate(3f)); // zaman durduysa bekle
+            if (timeMask != null && timeMask.isTimeStopped)
+                StartCoroutine(DelayedDeactivate(3f));
             else
                 Deactivate();
         }
@@ -39,7 +42,7 @@ public class PressurePlate : MonoBehaviour, IInteractable
     private IEnumerator DelayedDeactivate(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (objectCount <= 0) // baþka biri basmamýþsa
+        if (objectCount <= 0)
             Deactivate();
     }
 
@@ -47,11 +50,15 @@ public class PressurePlate : MonoBehaviour, IInteractable
     {
         isActive = true;
         interactableTarget?.Activate();
+        if (animator != null)
+            animator.SetBool("isPressed", true); //  Animasyon tetiklenir
     }
 
     public void Deactivate()
     {
         isActive = false;
         interactableTarget?.Deactivate();
+        if (animator != null)
+            animator.SetBool("isPressed", false); //  Geri animasyon
     }
 }

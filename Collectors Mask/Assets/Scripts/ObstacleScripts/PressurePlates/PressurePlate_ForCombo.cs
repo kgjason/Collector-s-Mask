@@ -12,6 +12,9 @@ public class PressurePlate_ForCombo : MonoBehaviour, IInteractable
 
     private Coroutine delayedCoroutine;
 
+    [Header("Animation")]
+    public Animator animator; //  Eklendi
+
     private void Start()
     {
         if (targetObject != null)
@@ -56,11 +59,15 @@ public class PressurePlate_ForCombo : MonoBehaviour, IInteractable
     {
         isActive = true;
         interactableTarget?.Activate();
+        if (animator != null)
+            animator.SetBool("isPressed", true);
     }
 
     public void Deactivate()
     {
         isActive = false;
         interactableTarget?.Deactivate();
+        if (animator != null)
+            animator.SetBool("isPressed", false);
     }
 }

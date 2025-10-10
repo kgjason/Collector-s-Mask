@@ -9,6 +9,9 @@ public class PlayerPressurePlate : MonoBehaviour, IInteractable
     public int objectCount = 0;
     [SerializeField] public TimeMask timeMask;
 
+    [Header("Animation")]
+    public Animator animator; //  Ekledik
+
     private void Start()
     {
         if (targetObject != null)
@@ -32,7 +35,6 @@ public class PlayerPressurePlate : MonoBehaviour, IInteractable
         if (collision.CompareTag("Player"))
         {
             objectCount++;
-            Debug.Log($"PlayerPressurePlate ({gameObject.name}): OnTriggerEnter2D, objectCount={objectCount}, targetObject={targetObject?.name}");
             if (objectCount >= 1)
                 Activate();
         }
@@ -44,43 +46,34 @@ public class PlayerPressurePlate : MonoBehaviour, IInteractable
         {
             objectCount--;
             bool isTimeStopped = (timeMask != null && timeMask.isTimeStopped) || Time.timeScale == 0f;
-            Debug.Log($"PlayerPressurePlate ({gameObject.name}): OnTriggerExit2D, objectCount={objectCount}, isTimeStopped={isTimeStopped}, Time.timeScale={Time.timeScale}, targetObject={targetObject?.name}");
             if (objectCount <= 0)
             {
                 if (isTimeStopped)
-                {
                     StartCoroutine(DelayedDeactivate(3f));
-                }
                 else
-                {
                     Deactivate();
-                }
             }
         }
     }
 
     private IEnumerator DelayedDeactivate(float delay)
     {
-        Debug.Log($"PlayerPressurePlate ({gameObject.name}): DelayedDeactivate started, delay={delay}s");
         yield return new WaitForSeconds(delay);
         if (objectCount <= 0)
-        {
-            Debug.Log($"PlayerPressurePlate ({gameObject.name}): DelayedDeactivate completed, deactivating");
             Deactivate();
-        }
     }
 
     public void Activate()
     {
         isActive = true;
         interactableTarget?.Activate();
-        Debug.Log($"PlayerPressurePlate ({gameObject.name}): Activate called, targetObject={targetObject?.name}");
+        animator?.SetBool("isPressed", true); //  Basýldýðýnda animasyon
     }
 
     public void Deactivate()
     {
         isActive = false;
         interactableTarget?.Deactivate();
-        Debug.Log($"PlayerPressurePlate ({gameObject.name}): Deactivate called, targetObject={targetObject?.name}");
+        animator?.SetBool("isPressed", false); //  Ayaðýný çektiðinde animasyon
     }
 }

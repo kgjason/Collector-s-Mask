@@ -12,6 +12,9 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
     public int objectCount = 0;
     private Coroutine delayedCoroutine;
 
+    [Header("Animation")]
+    public Animator animator; //  Ekledik
+
     private void Start()
     {
         if (targetObject != null)
@@ -41,10 +44,7 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
         objectCount--;
         if (objectCount <= 0)
         {
-            // Zaman durdurulmuþsa (timeMask.isTimeStopped veya Time.timeScale kontrolü)
             bool isTimeStopped = (timeMask != null && timeMask.isTimeStopped) || Time.timeScale == 0f;
-            Debug.Log($"OnTriggerExit2D: objectCount={objectCount}, isTimeStopped={isTimeStopped}, Time.timeScale={Time.timeScale}, isActive={isActive}");
-
             if (isTimeStopped)
             {
                 if (delayedCoroutine != null)
@@ -63,13 +63,9 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
 
     private IEnumerator DelayedDeactivate(float delay)
     {
-        Debug.Log($"DelayedDeactivate started: delay={delay}s, isActive={isActive}");
         yield return new WaitForSeconds(delay);
         if (objectCount <= 0)
-        {
-            Debug.Log("DelayedDeactivate: Deactivating plate");
             Deactivate();
-        }
         delayedCoroutine = null;
     }
 
@@ -77,13 +73,13 @@ public class PlayerPressurePlate_ForCombo : MonoBehaviour, IInteractable
     {
         isActive = true;
         interactableTarget?.Activate();
-        Debug.Log("Plate Activated");
+        animator?.SetBool("isPressed", true); //  Press anim
     }
 
     public void Deactivate()
     {
         isActive = false;
         interactableTarget?.Deactivate();
-        Debug.Log("Plate Deactivated");
+        animator?.SetBool("isPressed", false); //  Release anim
     }
 }
